@@ -25,18 +25,21 @@ export default function Creators() {
       },
     });
 
-    // Character Reveal
-    gsap.from(".creator-char", {
-      opacity: 0,
-      filter: "blur(10px)",
-      y: 20,
-      stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
+    // Elegant Typewriter Reveal (Looping)
+    const typeWriterTl = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 2, // Waits 2 seconds before typing again
       scrollTrigger: {
         trigger: ".creator-title",
         start: "top 85%",
       }
+    });
+
+    typeWriterTl.from(".creator-char", {
+      opacity: 0,
+      duration: 0.8, // Smooth, elegant fade-in
+      stagger: 0.15, // Slower, more deliberate pacing
+      ease: "power2.out", // Soft deceleration
     });
 
     const triggerOpts = (el: any) => ({
