@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Morcule didn't just build a site; they built a digital home for our roasting philosophy. Our online sales doubled within a month of launch.",
+      quote: "Mark In Bran didn't just build a site; they built a digital home for our roasting philosophy. Our online sales doubled within a month of launch.",
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKfqOTNzn_zGiKOCxjkkwMq6gPlshmnVsuld0Uzr1A6dW6m4UW5I59T81GBDJREQNhWxOd0yvllUSOPIANwb4gnmsQyVxcJ_jLUMciAqqqHiexaC8jq-3zfrqQF61kN6jfyUXhUqOAhwSejL3UdPv-9NIXZFd8rsl-n6NlgY2BUkpGP3c8n4t6claWLJISqwL4hSUV7sJ2hO6GztiMwv-i1HbCcITuSABWcwRIguLkoAv8X4LL-eZi5vqPBwdZIi9eFaJWhsqWRhM",
       name: "Marcus Chen",
       role: "Founder, Estate Coffee"

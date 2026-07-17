@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     // If an API key is configured, practically send the email.
     if (process.env.RESEND_API_KEY) {
       const { error } = await resend.emails.send({
-        from: 'Morcule Team <onboarding@resend.dev>', // Update this with verified sender domain when ready
+        from: 'Mark In Bran Team <onboarding@resend.dev>', // Update this with verified sender domain when ready
         to: ['your-team@example.com'], // Update with actual team email
         subject: `New Project Request from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${details}`,

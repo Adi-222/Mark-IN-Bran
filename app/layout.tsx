@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' });
 
 export const metadata: Metadata = {
-  title: 'Morcule.',
+  title: 'Mark In Bran.',
   description: 'websites for coffee shops, salons, dentists & more. We blend editorial craft with conversion science.',
 };
 
