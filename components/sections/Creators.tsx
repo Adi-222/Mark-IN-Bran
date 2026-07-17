@@ -13,7 +13,7 @@ export default function Creators() {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    // 1. Watermark Parallax
+    // Watermark
     gsap.to(".watermark", {
       yPercent: 30,
       ease: "none",
@@ -25,7 +25,7 @@ export default function Creators() {
       },
     });
 
-    // 2. Title Text Effect (Blur Reveal)
+    // Character Reveal
     gsap.from(".creator-char", {
       opacity: 0,
       filter: "blur(10px)",
@@ -39,40 +39,45 @@ export default function Creators() {
       }
     });
 
-    const triggerOpts = {
-      trigger: containerRef.current,
-      start: "top 65%", 
-    };
-
-    // 3. Lateral & Vertical Entrances
-    gsap.from(".reveal-left", {
-      x: -80,
-      opacity: 0,
-      duration: 1.2,
-      stagger: 0.15,
-      ease: "power3.out",
-      scrollTrigger: triggerOpts,
+    const triggerOpts = (el: any) => ({
+      trigger: el,
+      start: "center bottom", // Triggers when exactly 50% of the element enters from bottom
+      end: "center top",      // Reverses when exactly 50% of the element leaves from top
+      toggleActions: "play reverse play reverse",
     });
 
-    gsap.from(".reveal-right", {
-      x: 80,
-      opacity: 0,
-      duration: 1.2,
-      stagger: 0.15,
-      ease: "power3.out",
-      scrollTrigger: triggerOpts,
+    // Lateral Entrances
+    gsap.utils.toArray(".reveal-left").forEach((el: any) => {
+      gsap.from(el, {
+        x: -80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: triggerOpts(el),
+      });
     });
 
-    gsap.from(".reveal-up", {
-      y: 80,
-      opacity: 0,
-      duration: 1.2,
-      delay: 0.4,
-      ease: "power3.out",
-      scrollTrigger: triggerOpts,
+    gsap.utils.toArray(".reveal-right").forEach((el: any) => {
+      gsap.from(el, {
+        x: 80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: triggerOpts(el),
+      });
     });
 
-    // 4. Subtle Image Parallax inside Creator Cards
+    gsap.utils.toArray(".reveal-up").forEach((el: any) => {
+      gsap.from(el, {
+        y: 80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: triggerOpts(el),
+      });
+    });
+
+    // Parallax Images
     gsap.utils.toArray(".parallax-image").forEach((img: any) => {
       gsap.fromTo(img, 
         { yPercent: -10, scale: 1.1 },
@@ -89,10 +94,27 @@ export default function Creators() {
       );
     });
 
-  }, { scope: containerRef });
+    // Text Masking
+    gsap.utils.toArray(".creator-name").forEach((el: any) => {
+      gsap.from(el, {
+        y: "150%",
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: triggerOpts(el),
+      });
+    });
 
-  const cardClasses = "flex flex-col cursor-pointer transition-all duration-[800ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:opacity-30 group-hover:scale-95 group-hover:translate-y-6 hover:!opacity-100 hover:!scale-105 hover:!-translate-y-2 hover:z-30 relative";
-  const avatarCardClasses = "flex flex-col items-center cursor-pointer transition-all duration-[800ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:opacity-30 group-hover:scale-95 group-hover:translate-y-6 hover:!opacity-100 hover:!scale-105 hover:!-translate-y-2 hover:z-30 relative";
+    gsap.utils.toArray(".creator-role").forEach((el: any) => {
+      gsap.from(el, {
+        y: "150%",
+        duration: 0.8,
+        delay: 0.1,
+        ease: "power3.out",
+        scrollTrigger: triggerOpts(el),
+      });
+    });
+
+  }, { scope: containerRef });
 
   const renderText = (text: string) => {
     return text.split('').map((char, index) => (
@@ -101,6 +123,9 @@ export default function Creators() {
       </span>
     ));
   };
+
+  const cardClasses = "flex flex-col cursor-pointer transition-all duration-[600ms] ease-out group-hover:opacity-40 group-hover:blur-[2px] group-hover:scale-[0.98] hover:!opacity-100 hover:!blur-none hover:!scale-[1.03] hover:z-30 relative";
+  const avatarCardClasses = "flex flex-col items-center cursor-pointer transition-all duration-[600ms] ease-out group-hover:opacity-40 group-hover:blur-[2px] group-hover:scale-[0.98] hover:!opacity-100 hover:!blur-none hover:!scale-[1.03] hover:z-30 relative";
 
   return (
     <section ref={containerRef} className="relative pt-32 pb-40 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto overflow-hidden" id="creators">
@@ -132,7 +157,9 @@ export default function Creators() {
               <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl border border-outline-variant rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden mb-3 shadow-md bg-surface-container dark:bg-[#1E1E1E]">
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Sarah L." />
               </div>
-              <p className="text-[10px] lg:text-xs font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">Sarah L.</p>
+              <div className="overflow-hidden">
+                <p className="creator-name text-[10px] lg:text-xs font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">Sarah L.</p>
+              </div>
             </div>
           </div>
           
@@ -142,8 +169,12 @@ export default function Creators() {
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Studio NORD" />
               </div>
               <div className="text-center">
-                <p className="font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Studio NORD</p>
-                <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Collective</p>
+                <div className="overflow-hidden pb-1">
+                  <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Studio NORD</p>
+                </div>
+                <div className="overflow-hidden">
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Collective</p>
+                </div>
               </div>
             </div>
           </div>
@@ -160,8 +191,12 @@ export default function Creators() {
                     <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Julian Moss" />
                   </div>
                   <div className="text-center">
-                    <p className="font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Julian Moss</p>
-                    <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Space</p>
+                    <div className="overflow-hidden pb-1">
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Julian Moss</p>
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Space</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -172,8 +207,12 @@ export default function Creators() {
                     <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Anya Volkov" />
                   </div>
                   <div className="text-center">
-                    <p className="font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Anya Volkov</p>
-                    <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Identity</p>
+                    <div className="overflow-hidden pb-1">
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Anya Volkov</p>
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Identity</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -187,8 +226,12 @@ export default function Creators() {
                     <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80" alt="Sophia Chen" />
                   </div>
                   <div className="text-center">
-                    <p className="font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Sophia Chen</p>
-                    <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Direction</p>
+                    <div className="overflow-hidden pb-1">
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Sophia Chen</p>
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Direction</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -199,8 +242,12 @@ export default function Creators() {
                     <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="David K." />
                   </div>
                   <div className="text-center">
-                    <p className="font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">David K.</p>
-                    <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Textile</p>
+                    <div className="overflow-hidden pb-1">
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">David K.</p>
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Textile</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -217,8 +264,12 @@ export default function Creators() {
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Isabella Frost" />
               </div>
               <div className="text-center">
-                <p className="font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">Isabella Frost</p>
-                <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Experience</p>
+                <div className="overflow-hidden pb-1">
+                  <p className="creator-name font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">Isabella Frost</p>
+                </div>
+                <div className="overflow-hidden">
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Experience</p>
+                </div>
               </div>
             </div>
           </div>
@@ -232,8 +283,12 @@ export default function Creators() {
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Marcus Thorne" />
               </div>
               <div className="text-center">
-                <p className="font-serif text-lg lg:text-xl text-on-surface dark:text-[#EDEDED]">Marcus Thorne</p>
-                <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Curation</p>
+                <div className="overflow-hidden pb-1">
+                  <p className="creator-name font-serif text-lg lg:text-xl text-on-surface dark:text-[#EDEDED]">Marcus Thorne</p>
+                </div>
+                <div className="overflow-hidden">
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Curation</p>
+                </div>
               </div>
             </div>
           </div>
@@ -244,8 +299,12 @@ export default function Creators() {
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=400&q=80" alt="Clara Mendes" />
               </div>
               <div className="text-center">
-                <p className="font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">Clara Mendes</p>
-                <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Photography</p>
+                <div className="overflow-hidden pb-1">
+                  <p className="creator-name font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">Clara Mendes</p>
+                </div>
+                <div className="overflow-hidden">
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Photography</p>
+                </div>
               </div>
             </div>
           </div>
@@ -256,8 +315,12 @@ export default function Creators() {
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Erik S." />
               </div>
               <div className="text-center">
-                <p className="font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Erik S.</p>
-                <p className="text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Sonic</p>
+                <div className="overflow-hidden pb-1">
+                  <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Erik S.</p>
+                </div>
+                <div className="overflow-hidden">
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Sonic</p>
+                </div>
               </div>
             </div>
           </div>
@@ -268,7 +331,9 @@ export default function Creators() {
               <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-2 border-primary dark:border-[#1E1E1E] overflow-hidden mb-2 shadow-sm bg-surface-container dark:bg-[#1E1E1E]">
                 <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80" alt="Leo H." />
               </div>
-              <p className="text-[10px] font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">Leo H.</p>
+              <div className="overflow-hidden">
+                <p className="creator-name text-[10px] font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">Leo H.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -282,8 +347,12 @@ export default function Creators() {
               <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Julian Moss" />
             </div>
             <div className="text-center">
-              <p className="font-serif text-xl text-on-surface dark:text-[#EDEDED]">Julian Moss</p>
-              <p className="text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Space</p>
+              <div className="overflow-hidden pb-1">
+                <p className="creator-name font-serif text-xl text-on-surface dark:text-[#EDEDED]">Julian Moss</p>
+              </div>
+              <div className="overflow-hidden">
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Space</p>
+              </div>
             </div>
           </div>
         </div>
@@ -294,8 +363,12 @@ export default function Creators() {
               <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80" alt="Sophia Chen" />
             </div>
             <div className="text-center">
-              <p className="font-serif text-xl text-on-surface dark:text-[#EDEDED]">Sophia Chen</p>
-              <p className="text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Direction</p>
+              <div className="overflow-hidden pb-1">
+                <p className="creator-name font-serif text-xl text-on-surface dark:text-[#EDEDED]">Sophia Chen</p>
+              </div>
+              <div className="overflow-hidden">
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Direction</p>
+              </div>
             </div>
           </div>
         </div>
@@ -306,8 +379,12 @@ export default function Creators() {
               <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Marcus Thorne" />
             </div>
             <div className="text-center">
-              <p className="font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Marcus Thorne</p>
-              <p className="text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Curation</p>
+              <div className="overflow-hidden pb-1">
+                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Marcus Thorne</p>
+              </div>
+              <div className="overflow-hidden">
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Curation</p>
+              </div>
             </div>
           </div>
         </div>
@@ -318,8 +395,12 @@ export default function Creators() {
               <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=400&q=80" alt="Clara Mendes" />
             </div>
             <div className="text-center">
-              <p className="font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Clara Mendes</p>
-              <p className="text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Photography</p>
+              <div className="overflow-hidden pb-1">
+                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Clara Mendes</p>
+              </div>
+              <div className="overflow-hidden">
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Photography</p>
+              </div>
             </div>
           </div>
         </div>
@@ -330,8 +411,12 @@ export default function Creators() {
               <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Isabella Frost" />
             </div>
             <div className="text-center">
-              <p className="font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Isabella Frost</p>
-              <p className="text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Experience</p>
+              <div className="overflow-hidden pb-1">
+                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Isabella Frost</p>
+              </div>
+              <div className="overflow-hidden">
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Experience</p>
+              </div>
             </div>
           </div>
         </div>
