@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Fraunces } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import ContactModal from '@/components/ui/ContactModal';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -26,6 +27,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
           <ContactModal />
+          <WhatsAppButton />
         </ThemeProvider>
       </body>
     </html>
