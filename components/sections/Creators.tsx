@@ -137,7 +137,7 @@ export default function Creators() {
         className="watermark absolute top-40 left-1/2 select-none z-0 font-serif text-[180px] md:text-[240px] font-bold tracking-tighter whitespace-nowrap pointer-events-none opacity-[0.03] dark:opacity-10 text-on-surface dark:text-[#EDEDED]"
         style={{ transform: "translateX(-50%)" }}
       >
-        MARK IN BRAN
+        MARK IN <span className="text-blue-500">BRAN</span>
       </div>
 
       {/* Title Section */}

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full border-t border-outline-variant/15 dark:border-white/8 bg-surface dark:bg-[#1A1A1A] text-on-surface dark:text-[#EDEDED] py-16 md:py-24 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-16">
         <div className="space-y-6 max-w-sm">
-          <Link className="text-3xl font-serif font-bold text-on-surface dark:text-[#EDEDED]" href="/">Mark In Bran</Link>
+          <Link className="text-3xl font-serif font-bold text-on-surface dark:text-[#EDEDED]" href="/">Mark In <span className="text-blue-500">Bran</span></Link>
           <p className="text-on-surface-variant dark:text-[#A0A0A0]">We curate digital experiences for local legends. Vibe-coded, result-driven, human-centered.</p>
           <div className="flex gap-4">
             <a className="w-10 h-10 rounded-full border border-outline-variant/30 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="#">
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-outline-variant/10 dark:border-white/8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-on-surface-variant dark:text-[#A0A0A0]">
-        <p>© 2025 Mark In Bran. All rights reserved.</p>
+        <p>© 2025 Mark In <span className="text-blue-500">Bran</span>. All rights reserved.</p>
         <p>Made with ♥ for small business.</p>
       </div>
     </footer>
