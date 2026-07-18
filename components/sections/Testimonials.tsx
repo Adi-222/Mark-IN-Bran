@@ -6,22 +6,40 @@ import { motion } from 'framer-motion'
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: <>Mark <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">In</span> Bran didn&apos;t just build a site; they built a digital home for our roasting philosophy. Our online sales doubled within a month of launch.</>,
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKfqOTNzn_zGiKOCxjkkwMq6gPlshmnVsuld0Uzr1A6dW6m4UW5I59T81GBDJREQNhWxOd0yvllUSOPIANwb4gnmsQyVxcJ_jLUMciAqqqHiexaC8jq-3zfrqQF61kN6jfyUXhUqOAhwSejL3UdPv-9NIXZFd8rsl-n6NlgY2BUkpGP3c8n4t6claWLJISqwL4hSUV7sJ2hO6GztiMwv-i1HbCcITuSABWcwRIguLkoAv8X4LL-eZi5vqPBwdZIi9eFaJWhsqWRhM",
-      name: "Marcus Chen",
-      role: "Founder, Estate Coffee"
+      quote: <>Mark <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">In</span> Bran completely transformed our digital presence. For a legacy brand like ours, maintaining trust while modernizing is tough, but they nailed it. Our premium lead generation has skyrocketed.</>,
+      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=256&q=80",
+      name: "Rajeev Mehta",
+      role: "VP Marketing, Shapoorji Pallonji"
     },
     {
-      quote: "The process was so smooth. They actually listened to our weird ideas and turned them into something beautiful and functional.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcmhO_ZwWl-isVx_J-0CUdH_aB-fBILxqdPukuMBvloRPtbZgcEb88sLeXnNm0iiWt-Munet2IUJyRZ7gDC8rsDaR_UPZBBLyIx-QarYe60yE8_2e3WoByB0sj5Xk55_bH7dXIgMJgXkeFV7tKf6pjkSdyGztzAUpllhOSR0KsMqzIInHdcAZ4ALQu2yI9I8d25vT-1wYn9Phhcs0IR1i9LTUNsKnvnVoGIzM0yFCPC4PeCPcMakF12cbFv321QxJkwrbZ0mTao8w",
-      name: "Sarah Jenkins",
-      role: "Owner, Luna Aesthetics"
+      quote: "They didn't just build a website; they captured the exact vibe of our cafes. Since the redesign, our online orders and franchise inquiries have doubled. Absolutely brilliant work.",
+      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=256&q=80",
+      name: "Ananya Sharma",
+      role: "Founder, Chumuk Tea & More"
     },
     {
-      quote: "Finally, a web agency that understands local business. Our patient bookings have never been easier to manage.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuClrPoBQpbaZjWwi6OmfTMudNHDQR2yR1CSIbJGgEh8DBqVU7jVCxZH253cRGL-vGs9wW3UTzVy4fxygdnaurEYmEHud-gM6TffVHgm-_rr8jTBTOoauwp63LwEL7PCZ8XJthnidIgP-rBAQWqm8pA0k_H6ytfDyOt0xUno69inLZ26HLNzGACrBIZsDA3c-YrWjjtxTwCSzN9GMc5vG_dzNZwZNn2luPnVvrbgLT5hQTyI_R3GYMrODWX8gJ5PBPfjy7Vcy4PKs5U",
-      name: "Dr. David Miller",
-      role: "Summit Dental"
+      quote: "In the finance sector, your website is your credibility. The sleek, high-end aesthetic they delivered gave us an instant authority boost. It's an absolute conversion machine.",
+      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=256&q=80",
+      name: "Vikram Desai",
+      role: "Director, Provestor"
+    },
+    {
+      quote: "The interactive project showcases they built for our residential properties are mind-blowing. Buyers spend 3x more time on our site now, leading to significantly faster sell-outs.",
+      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=256&q=80",
+      name: "Priya Kapoor",
+      role: "Head of Sales, Joyville"
+    },
+    {
+      quote: "Sports fans demand speed and excitement. The dynamic layouts and insanely fast load times they achieved have completely revolutionized how our supporters interact with the team online.",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      name: "Arjun Singh",
+      role: "Digital Head, KHL"
+    },
+    {
+      quote: "Translating a fine-dining experience into a website is incredibly difficult, but they made it look effortless. Our table reservations booked out completely within the first week of launch.",
+      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      name: "Riya Sen",
+      role: "Owner, DOT Restaurant"
     }
   ]
 
