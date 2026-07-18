@@ -27,7 +27,7 @@ export default function Hero() {
           <motion.span
             key={charIndex}
             variants={typeLetterVariants}
-            className={`inline-block ${isPrimary ? 'text-primary italic' : ''}`}
+            className={`inline-block ${isPrimary ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent italic p-[0.2em] -m-[0.2em]' : ''}`}
           >
             {char}
           </motion.span>
@@ -72,12 +72,12 @@ export default function Hero() {
             onClick={openContactModal}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="w-full sm:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg transition-all"
+            className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg transition-all"
           >
             Book a Free Call
           </motion.button>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <Link href="#work" className="inline-block w-full sm:w-auto text-on-surface dark:text-[#EDEDED] hover:underline decoration-primary underline-offset-8 px-8 py-4 text-lg font-medium transition-all">
+            <Link href="#work" className="inline-block w-full sm:w-auto text-on-surface dark:text-[#EDEDED] hover:underline decoration-blue-500 underline-offset-8 px-8 py-4 text-lg font-medium transition-all">
               View Our Work
             </Link>
           </motion.div>

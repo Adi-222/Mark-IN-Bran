@@ -65,7 +65,7 @@ export default function MobileNav() {
                       closeNav()
                       openContactModal()
                     }} 
-                    className="bg-primary text-on-primary px-4 py-3 rounded-xl font-medium mt-4 w-full text-center hover:bg-primary-container transition-colors"
+                    className="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-4 py-3 rounded-xl font-medium mt-4 w-full text-center hover:from-blue-500 hover:to-blue-700 transition-colors"
                   >
                     Start a Project
                   </button>

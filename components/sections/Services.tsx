@@ -47,7 +47,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal>
           <div className="mb-16 text-center space-y-4">
-            <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">What We Do</span>
+            <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">What We Do</span>
             <h2 className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED]">Everything your business needs online.</h2>
           </div>
         </ScrollReveal>
@@ -75,7 +75,7 @@ export default function Services() {
                 </div>
 
                 <div className="px-2 pb-2 flex flex-col flex-grow z-20">
-                  <p className="text-[9px] md:text-[10px] font-sans tracking-[0.2em] text-primary uppercase font-bold mb-3">{service.tags}</p>
+                  <p className="text-[9px] md:text-[10px] font-sans tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase font-bold mb-3">{service.tags}</p>
                   <h3 className="text-xl md:text-2xl font-medium mb-3 dark:text-[#EDEDED] font-serif leading-tight">{service.title}</h3>
                   <p className="text-on-surface-variant dark:text-[#A0A0A0] text-sm md:text-base leading-relaxed mt-auto">{service.desc}</p>
                 </div>

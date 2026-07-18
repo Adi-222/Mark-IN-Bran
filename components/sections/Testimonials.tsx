@@ -59,7 +59,7 @@ export default function Testimonials() {
               className="w-[320px] md:w-[480px] shrink-0 bg-surface-container-lowest dark:bg-[#1E1E1E] p-10 rounded-xl border border-outline-variant/5 dark:border-white/8 shadow-xl shadow-surface-dim/0 hover:shadow-primary/5 space-y-8 h-full flex flex-col justify-between transition-all cursor-default"
             >
               <div>
-                <div className="text-primary flex gap-1 mb-6">
+                <div className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                   ))}
@@ -88,7 +88,7 @@ export default function Testimonials() {
               className="w-[320px] md:w-[480px] shrink-0 bg-surface-container-lowest dark:bg-[#1E1E1E] p-10 rounded-xl border border-outline-variant/5 dark:border-white/8 shadow-xl shadow-surface-dim/0 hover:shadow-primary/5 space-y-8 h-full flex flex-col justify-between transition-all cursor-default"
             >
               <div>
-                <div className="text-primary flex gap-1 mb-6">
+                <div className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                   ))}

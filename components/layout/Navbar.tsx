@@ -34,7 +34,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button 
             onClick={openContactModal}
-            className="hidden md:block bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium active:scale-95 transition-transform hover:shadow-lg"
+            className="hidden md:block bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-2.5 rounded-full font-medium active:scale-95 transition-transform hover:shadow-lg"
           >
             Start a Project
           </button>
