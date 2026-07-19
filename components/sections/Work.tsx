@@ -117,7 +117,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">E-commerce & Brand Experience</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
           </div>
         </motion.div>
 
@@ -145,7 +145,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">Booking Platform & Visual Identity</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
           </div>
         </motion.div>
 
@@ -173,7 +173,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">Patient Portal & SEO Strategy</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
           </div>
         </motion.div>
 
@@ -201,7 +201,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">Reservation System & Art Direction</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
           </div>
         </motion.div>
 

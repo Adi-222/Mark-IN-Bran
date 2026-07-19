@@ -14,7 +14,7 @@ const config: Config = {
         "on-error": "#ffffff",
         "primary-fixed-dim": "#c3c0ff",
         "on-background": "#1a1c1b",
-        "primary": "#3525cd",
+        "primary": "#3b82f6",
         "secondary-fixed": "#e4e2e2",
         "inverse-primary": "#c3c0ff",
         "surface-container": "#efeeec",

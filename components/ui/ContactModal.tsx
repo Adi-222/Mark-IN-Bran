@@ -89,7 +89,7 @@ export default function ContactModal() {
               {status === 'success' ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="material-symbols-outlined text-primary text-3xl">check_circle</span>
+                    <span className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent text-3xl">check_circle</span>
                   </div>
                   <h3 className="text-2xl font-serif font-medium text-on-surface dark:text-[#EDEDED] mb-2">Message Sent</h3>
                   <p className="text-on-surface-variant dark:text-[#A0A0A0]">We&apos;ll be in touch with you shortly to discuss your project.</p>
@@ -146,7 +146,7 @@ export default function ContactModal() {
                       <button
                         type="submit"
                         disabled={status === 'loading'}
-                        className="w-full bg-primary text-on-primary font-medium px-6 py-4 rounded-xl hover:bg-primary-container hover:shadow-lg transition-all disabled:opacity-70 flex justify-center items-center"
+                        className="w-full bg-gradient-to-r from-blue-400 to-blue-600 text-white border-0 text-on-primary font-medium px-6 py-4 rounded-xl hover:bg-primary-container hover:shadow-lg transition-all disabled:opacity-70 flex justify-center items-center"
                       >
                         {status === 'loading' ? (
                           <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>

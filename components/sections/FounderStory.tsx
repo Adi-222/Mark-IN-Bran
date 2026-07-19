@@ -60,9 +60,9 @@ export default function FounderStory() {
               <div className="space-y-6 relative before:absolute before:inset-y-2 before:left-[7px] before:w-0.5 before:bg-outline-variant/20 dark:before:bg-white/10">
                 {timeline.map((item, idx) => (
                   <div key={idx} className="relative flex items-center gap-4">
-                    <div className={`w-4 h-4 rounded-full border-4 border-white dark:border-[#1A1A1A] z-10 ${item.highlight ? 'bg-primary' : 'bg-outline-variant dark:bg-white/30'}`}></div>
+                    <div className={`w-4 h-4 rounded-full border-4 border-white dark:border-[#1A1A1A] z-10 ${item.highlight ? 'bg-gradient-to-r from-blue-400 to-blue-600 text-white border-0' : 'bg-outline-variant dark:bg-white/30'}`}></div>
                     <div>
-                      {item.year && <p className="text-[10px] uppercase font-bold tracking-widest text-primary mb-0.5">{item.year}</p>}
+                      {item.year && <p className="text-[10px] uppercase font-bold tracking-widest bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-0.5">{item.year}</p>}
                       <p className={`text-sm ${item.highlight ? 'font-bold text-on-surface dark:text-[#EDEDED]' : 'text-on-surface-variant dark:text-[#A0A0A0]'}`}>{item.role}</p>
                     </div>
                   </div>
@@ -104,9 +104,9 @@ export default function FounderStory() {
               <div className="space-y-6 relative before:absolute before:inset-y-2 before:left-[7px] before:w-0.5 before:bg-outline-variant/20 dark:before:bg-white/10">
                 {timeline.map((item, idx) => (
                   <div key={idx} className="relative flex items-center gap-4">
-                    <div className={`w-4 h-4 rounded-full border-4 border-surface-container-low dark:border-[#1A1A1A] z-10 ${item.highlight ? 'bg-primary' : 'bg-outline-variant dark:bg-white/30'}`}></div>
+                    <div className={`w-4 h-4 rounded-full border-4 border-surface-container-low dark:border-[#1A1A1A] z-10 ${item.highlight ? 'bg-gradient-to-r from-blue-400 to-blue-600 text-white border-0' : 'bg-outline-variant dark:bg-white/30'}`}></div>
                     <div>
-                      {item.year && <p className="text-[10px] uppercase font-bold tracking-widest text-primary mb-0.5">{item.year}</p>}
+                      {item.year && <p className="text-[10px] uppercase font-bold tracking-widest bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-0.5">{item.year}</p>}
                       <p className={`text-sm ${item.highlight ? 'font-bold text-on-surface dark:text-[#EDEDED]' : 'text-on-surface-variant dark:text-[#A0A0A0]'}`}>{item.role}</p>
                     </div>
                   </div>

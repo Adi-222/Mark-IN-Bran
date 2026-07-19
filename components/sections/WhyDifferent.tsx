@@ -53,7 +53,7 @@ export default function WhyDifferent() {
                 <div className="absolute inset-0 rounded-3xl shadow-[inset_2px_2px_4px_rgba(255,255,255,0.9),inset_-2px_-2px_4px_rgba(0,0,0,0.02)] dark:shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05),inset_-2px_-2px_4px_rgba(0,0,0,0.2)] pointer-events-none z-10"></div>
                 
                 <div className="relative z-20 flex flex-col h-full">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
                     <span className="material-symbols-outlined text-3xl">{item.icon}</span>
                   </div>
                   <h3 className="text-xl md:text-2xl font-medium mb-4 dark:text-[#EDEDED] font-serif leading-tight">{item.title}</h3>

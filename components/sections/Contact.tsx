@@ -22,7 +22,7 @@ export default function Contact() {
                 onClick={openContactModal}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-surface text-primary px-10 py-5 rounded-full text-xl font-bold transition-transform shadow-lg"
+                className="bg-surface bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent px-10 py-5 rounded-full text-xl font-bold transition-transform shadow-lg"
               >
                 Book A Free Brand Strategy Call
               </motion.button>

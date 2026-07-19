@@ -72,7 +72,7 @@ export default function Services() {
                   onClick={() => setActiveTab(index)}
                   className={`w-full text-left py-4 px-6 rounded-xl transition-all duration-300 flex justify-between items-center ${
                     activeTab === index 
-                      ? 'bg-primary text-white shadow-lg shadow-primary/20 scale-[1.02]' 
+                      ? 'bg-gradient-to-r from-blue-400 to-blue-600 text-white border-0 text-white shadow-lg shadow-primary/20 scale-[1.02]' 
                       : 'hover:bg-surface-container hover:dark:bg-[#1A1A1A] text-on-surface-variant dark:text-[#A0A0A0]'
                   }`}
                 >
@@ -125,7 +125,7 @@ export default function Services() {
                   {services[activeTab].items.map((item, idx) => (
                     <li key={idx} className="flex items-center gap-4 group cursor-default">
                       <div className="w-10 h-10 rounded-full bg-surface-container dark:bg-[#1A1A1A] flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                        <span className="material-symbols-outlined text-primary text-sm">done</span>
+                        <span className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent text-sm">done</span>
                       </div>
                       <span className="text-lg text-on-surface-variant dark:text-[#A0A0A0] group-hover:text-on-surface dark:group-hover:text-[#EDEDED] transition-colors">{item}</span>
                     </li>

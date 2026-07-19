@@ -30,7 +30,7 @@ function ProcessStep({ step }: { step: ProcessStepType }) {
       <span className="text-8xl font-serif font-bold text-outline-variant/10 dark:text-white/5 absolute -top-8 -left-4 pointer-events-none">{step.num}</span>
       <div className="relative z-10 space-y-4">
         <div className="w-16 h-16 bg-surface-container dark:bg-[#1A1A1A] rounded-full flex items-center justify-center border-4 border-surface dark:border-[#0F0F0F]">
-          <span className="material-symbols-outlined text-primary">{step.icon}</span>
+          <span className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">{step.icon}</span>
         </div>
         <h3 className="text-xl font-semibold dark:text-[#EDEDED]">{step.title}</h3>
         <p className="text-on-surface-variant dark:text-[#A0A0A0]">{step.desc}</p>
@@ -54,7 +54,7 @@ export default function Process() {
     <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 overflow-hidden" id="process">
       <ScrollReveal>
         <div className="mb-20">
-          <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">How it works</span>
+          <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">How it works</span>
           <h2 className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED] mt-4">From Idea To Brand.</h2>
         </div>
       </ScrollReveal>
