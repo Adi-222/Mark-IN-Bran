@@ -56,7 +56,7 @@ export default function Work() {
   }
 
   return (
-    <section ref={containerRef} className="max-w-7xl mx-auto px-6 py-24 md:py-32 overflow-hidden" id="work">
+    <section ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 overflow-hidden" id="work">
       <ScrollReveal>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-24">
           <div className="space-y-4">

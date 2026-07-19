@@ -43,7 +43,7 @@ export default function Process() {
   }
 
   return (
-    <section className="bg-surface dark:bg-[#0F0F0F] py-24 md:py-40" id="process">
+    <section className="bg-surface dark:bg-[#0F0F0F] py-16 md:py-32" id="process">
       <div className="max-w-7xl mx-auto px-6">
         
         <ScrollReveal>
@@ -51,7 +51,7 @@ export default function Process() {
             <div className="space-y-6 max-w-2xl">
               <span className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase">Our Process</span>
               <motion.h2 
-                className="text-5xl md:text-7xl font-serif font-medium text-on-surface dark:text-[#EDEDED] leading-[1.1]"
+                className="text-4xl sm:text-5xl md:text-7xl font-serif font-medium text-on-surface dark:text-[#EDEDED] leading-[1.1]"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
@@ -74,7 +74,7 @@ export default function Process() {
               <motion.div 
                 whileHover={{ x: 12 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="group border-b border-outline-variant/20 dark:border-white/10 py-10 md:py-16 flex flex-col md:flex-row md:items-center gap-6 md:gap-12 transition-colors duration-500 cursor-default hover:bg-blue-500/[0.02] dark:hover:bg-blue-500/[0.03] -mx-6 px-6 md:mx-0 md:px-4 rounded-xl md:rounded-none"
+                className="group border-b border-outline-variant/20 dark:border-white/10 py-8 md:py-16 flex flex-col md:flex-row md:items-center gap-4 md:gap-12 transition-colors duration-500 cursor-default hover:bg-blue-500/[0.02] dark:hover:bg-blue-500/[0.03] -mx-4 px-4 md:mx-0 md:px-4 rounded-xl md:rounded-none"
               >
                 {/* Number */}
                 <div className="w-16 md:w-24 shrink-0">

@@ -69,7 +69,7 @@ export default function Industries() {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-surface dark:bg-[#0A0A0A]" id="industries">
+    <section className="py-16 md:py-32 bg-surface dark:bg-[#0A0A0A] overflow-hidden" id="industries">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10" ref={containerRef}>
         
         {/* Glowing back blue gradient shadow */}
@@ -80,14 +80,14 @@ export default function Industries() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative bg-surface-container-lowest dark:bg-[#111111] rounded-[2rem] md:rounded-[4rem] border border-outline-variant/10 dark:border-white/5 overflow-hidden shadow-2xl py-24 md:py-32 px-6 flex flex-col items-center justify-center text-center"
+          className="relative bg-surface-container-lowest dark:bg-[#111111] rounded-[2rem] md:rounded-[4rem] border border-outline-variant/10 dark:border-white/5 overflow-hidden shadow-2xl py-16 md:py-32 px-4 md:px-6 flex flex-col items-center justify-center text-center"
         >
           {/* Subtle grid pattern overlay for texture */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGgyNHYyNEgwem0xIDF2MjJoMjJWMXptMCAwaDIydjIySDF6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=')] opacity-30 dark:opacity-20 mix-blend-overlay pointer-events-none"></div>
 
           {/* Ghost Watermark */}
           <div 
-            className="watermark-industries absolute top-10 md:top-20 left-1/2 select-none z-0 font-serif text-[120px] md:text-[200px] font-bold tracking-tighter whitespace-nowrap pointer-events-none opacity-[0.03] dark:opacity-10 text-on-surface dark:text-[#EDEDED]"
+            className="watermark-industries absolute top-10 md:top-20 left-1/2 select-none z-0 font-serif text-[70px] sm:text-[120px] md:text-[200px] font-bold tracking-tighter whitespace-nowrap pointer-events-none opacity-[0.03] dark:opacity-10 text-on-surface dark:text-[#EDEDED]"
             style={{ transform: "translateX(-50%)" }}
           >
             MARK <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">IN</span> BRAN
@@ -95,7 +95,7 @@ export default function Industries() {
 
           <div className="max-w-5xl mx-auto relative z-10">
             <div className="mb-16 md:mb-24">
-              <h2 className="industry-title font-serif text-5xl sm:text-6xl md:text-[80px] lg:text-[100px] leading-none tracking-[0.1em] mb-6 uppercase text-on-surface dark:text-[#EDEDED] flex justify-center flex-wrap">
+              <h2 className="industry-title font-serif text-4xl sm:text-5xl md:text-[80px] lg:text-[100px] leading-none tracking-[0.1em] mb-6 uppercase text-on-surface dark:text-[#EDEDED] flex justify-center flex-wrap">
                 {renderText("INDUSTRIES")}
               </h2>
               <motion.p 
@@ -103,7 +103,7 @@ export default function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="font-serif text-xl md:text-2xl text-on-surface-variant dark:text-[#A0A0A0] max-w-2xl mx-auto italic"
+                className="font-serif text-lg md:text-2xl text-on-surface-variant dark:text-[#A0A0A0] max-w-2xl mx-auto italic px-2"
               >
                 We build legacy brands across every major sector.
               </motion.p>
@@ -151,7 +151,7 @@ function IndustryPill({ text, index }: { text: string; index: number }) {
       const distY = centerY - e.clientY
       const distance = Math.sqrt(distX * distX + distY * distY)
       
-      const interactionRadius = 250 // Scatter radius
+      const interactionRadius = window.innerWidth < 768 ? 100 : 250 // Smaller scatter radius on mobile
       
       if (distance < interactionRadius && distance > 0) {
         // Calculate repulsion strength (closer = stronger push)
@@ -205,11 +205,11 @@ function IndustryPill({ text, index }: { text: string; index: number }) {
           }}
         >
           {/* Hover Interaction Layer */}
-          <motion.div
-            ref={ref}
-            whileHover={{ scale: 1.15 }}
-            className="px-5 py-3 md:px-8 md:py-4 rounded-full border border-outline-variant/30 dark:border-white/10 bg-white/50 dark:bg-[#1A1A1A]/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-400 transition-colors cursor-pointer text-on-surface-variant dark:text-[#A0A0A0] font-medium text-base md:text-xl tracking-wide select-none"
-          >
+            <motion.div
+              ref={ref}
+              whileHover={{ scale: 1.15 }}
+              className="px-4 py-2 md:px-8 md:py-4 rounded-full border border-outline-variant/30 dark:border-white/10 bg-white/50 dark:bg-[#1A1A1A]/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-400 transition-colors cursor-pointer text-on-surface-variant dark:text-[#A0A0A0] font-medium text-sm md:text-xl tracking-wide select-none whitespace-nowrap"
+            >
             {text}
           </motion.div>
         </motion.div>

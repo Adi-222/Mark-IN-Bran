@@ -42,12 +42,12 @@ export default function WhyDifferent() {
   ]
 
   return (
-    <section className="bg-surface dark:bg-[#0F0F0F] py-24 md:py-32" id="why-us">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-surface dark:bg-[#0F0F0F] py-16 md:py-32" id="why-us">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <ScrollReveal>
           <div className="mb-16 text-center space-y-4">
             <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">What Makes Us Different</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED]">Why Brands Choose Mark In Bran</h2>
+            <h2 className="text-3xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED]">Why Brands Choose Mark In Bran</h2>
           </div>
         </ScrollReveal>
         

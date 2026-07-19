@@ -43,7 +43,7 @@ export default function MobileNav() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/40 z-[50] md:hidden backdrop-blur-sm"
+              className="fixed inset-0 bg-black/40 z-[60] md:hidden backdrop-blur-sm"
               onClick={closeNav}
             />
             <motion.div 
@@ -51,7 +51,7 @@ export default function MobileNav() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 w-64 bg-surface dark:bg-[#0F0F0F] z-[60] shadow-2xl md:hidden overflow-y-auto"
+              className="fixed inset-y-0 right-0 w-64 bg-surface dark:bg-[#0F0F0F] z-[70] shadow-2xl md:hidden overflow-y-auto"
             >
               <div className="flex flex-col h-full p-8 pt-20">
                 <nav className="flex flex-col gap-6">

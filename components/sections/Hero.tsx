@@ -22,7 +22,7 @@ export default function Hero() {
 
   const renderText = (text: string, isPrimary: boolean = false) => {
     return text.split(' ').map((word, wordIndex, array) => (
-      <span key={wordIndex} className={`inline-block ${wordIndex !== array.length - 1 ? 'mr-3 md:mr-4 lg:mr-5' : ''}`}>
+      <span key={wordIndex} className={`inline-block ${wordIndex !== array.length - 1 ? 'mr-2 md:mr-3 lg:mr-5' : ''}`}>
         {word.split('').map((char, charIndex) => (
           <motion.span
             key={charIndex}
@@ -37,12 +37,12 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-[819px] flex flex-col items-center justify-center px-6 py-20 text-center overflow-hidden">
-      <div className="max-w-4xl mx-auto space-y-8 z-10 pt-20">
+    <section className="relative min-h-[819px] flex flex-col items-center justify-center px-4 md:px-6 py-20 text-center overflow-hidden">
+      <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 z-10 pt-8 md:pt-20">
         <motion.h1
           key={playCount}
           onMouseLeave={() => setPlayCount(c => c + 1)}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-on-background dark:text-[#EDEDED] leading-[1.1] tracking-tight flex flex-col items-center gap-y-2 md:gap-y-4 cursor-default"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-on-background dark:text-[#EDEDED] leading-[1.1] md:leading-[1.1] tracking-tight flex flex-col items-center gap-y-1 md:gap-y-4 cursor-default"
         >
           <motion.div variants={getContainerVariants(0.1)} initial="hidden" animate="visible">
             {renderText("We Don't Market Brands.")}
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.6, duration: 0.8 }}
-          className="text-lg md:text-xl text-on-surface-variant dark:text-[#A0A0A0] max-w-3xl mx-auto font-body"
+          className="text-base sm:text-lg md:text-xl text-on-surface-variant dark:text-[#A0A0A0] max-w-3xl mx-auto font-body px-2"
         >
           From startups to established companies, Mark In Bran combines AI, storytelling, branding, technology and content to turn businesses into brands people trust.
         </motion.p>
@@ -66,18 +66,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3.0, duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 px-4 w-full sm:w-auto"
         >
           <motion.button
             onClick={openContactModal}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg transition-all"
+            className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-blue-600 text-white px-8 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:shadow-lg transition-all"
           >
             Start Your Brand Journey
           </motion.button>
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <Link href="#work" className="inline-block w-full sm:w-auto text-on-surface dark:text-[#EDEDED] hover:underline decoration-blue-500 underline-offset-8 px-8 py-4 text-lg font-medium transition-all">
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+            <Link href="#work" className="inline-block w-full sm:w-auto text-on-surface dark:text-[#EDEDED] hover:underline decoration-blue-500 underline-offset-8 px-8 py-3.5 sm:py-4 text-base sm:text-lg font-medium transition-all text-center">
               View Our Work
             </Link>
           </motion.div>

@@ -50,12 +50,12 @@ export default function Services() {
   ]
 
   return (
-    <section className="bg-surface-container-low dark:bg-[#141414] py-24 md:py-32" id="services">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-surface-container-low dark:bg-[#141414] py-16 md:py-32" id="services">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <ScrollReveal>
           <div className="mb-16 md:mb-24 space-y-4 max-w-2xl">
             <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">What We Do</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED] leading-tight">
               Everything Your Brand Needs.<br/>
               One Growth Partner.
             </h2>

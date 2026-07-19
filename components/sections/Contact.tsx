@@ -4,7 +4,7 @@ import { openContactModal } from '../ui/ContactModal'
 
 export default function Contact() {
   return (
-    <section className="py-24 md:py-32 bg-surface dark:bg-[#0A0A0A]" id="contact">
+    <section className="py-16 md:py-32 bg-surface dark:bg-[#0A0A0A]" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <motion.div 
@@ -12,7 +12,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative bg-surface-container-lowest dark:bg-[#111111] rounded-[2rem] md:rounded-[4rem] border border-outline-variant/10 dark:border-white/5 overflow-hidden shadow-2xl py-24 md:py-32 px-6 flex flex-col items-center justify-center text-center"
+          className="relative bg-surface-container-lowest dark:bg-[#111111] rounded-[2rem] md:rounded-[4rem] border border-outline-variant/10 dark:border-white/5 overflow-hidden shadow-2xl py-16 md:py-32 px-4 md:px-6 flex flex-col items-center justify-center text-center"
         >
           {/* Immersive Background Ambient Glow Inside the Box */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-blue-500/10 dark:bg-blue-500/15 rounded-full blur-[100px] md:blur-[140px] pointer-events-none"></div>
@@ -43,7 +43,7 @@ export default function Contact() {
                 onClick={openContactModal}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-6 rounded-full bg-on-surface text-surface dark:bg-[#EDEDED] dark:text-[#0A0A0A] font-medium text-lg md:text-xl overflow-hidden transition-all shadow-xl hover:shadow-blue-500/25 border border-transparent dark:hover:border-blue-500/30"
+                className="group relative inline-flex items-center justify-center px-6 py-4 md:px-12 md:py-6 rounded-full bg-on-surface text-surface dark:bg-[#EDEDED] dark:text-[#0A0A0A] font-medium text-lg md:text-xl overflow-hidden transition-all shadow-xl hover:shadow-blue-500/25 border border-transparent dark:hover:border-blue-500/30 w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-500">
