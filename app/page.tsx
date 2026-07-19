@@ -18,7 +18,7 @@ export default function Home() {
       <main className="pt-24">
         <Hero />
         <WhyDifferent />
-        <FounderStory />
+
         <Services />
         <Industries />
         <Process />
@@ -26,6 +26,7 @@ export default function Home() {
         <Creators />
         <Testimonials />
         <Contact />
+        <FounderStory />
       </main>
       <Footer />
     </>
