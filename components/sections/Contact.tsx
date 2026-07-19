@@ -34,7 +34,7 @@ export default function Contact() {
             </div>
             
             <h2 className="text-4xl sm:text-6xl md:text-[80px] lg:text-[100px] font-serif font-medium leading-[1.05] tracking-tight text-on-surface dark:text-[#EDEDED]">
-              Let&apos;s build a brand<br/>
+              Let's build a brand<br/>
               <span className="italic font-light opacity-80 text-on-surface-variant dark:text-[#A0A0A0]">worth remembering.</span>
             </h2>
             
