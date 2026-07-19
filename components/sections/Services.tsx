@@ -1,87 +1,139 @@
 'use client'
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../ui/ScrollReveal'
 
 export default function Services() {
+  const [activeTab, setActiveTab] = useState(0)
+
   const services = [
-    { 
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
-      title: 'Web & Digital Presence', 
-      tags: 'Design • Development • SEO',
-      desc: 'We build high-converting, lightning-fast websites that turn your casual visitors into loyal customers.' 
+    {
+      title: "Brand Identity",
+      items: ["Logo Design", "Visual Identity", "Brand Guidelines", "Naming & Taglines", "Brand Voice"]
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
-      title: 'Brand Growth Planning', 
-      tags: 'Strategy • Positioning • Roadmaps',
-      desc: 'Strategic blueprints designed to scale your business sustainably and dominate your local market.' 
+    {
+      title: "AI Marketing",
+      items: ["AI Strategy", "Predictive Analytics", "Automated Workflows", "Chatbot Integration", "Personalization Systems"]
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-      title: 'Performance Marketing', 
-      tags: 'Meta Ads • Google Ads • Leads',
-      desc: 'Data-driven ad campaigns that maximize your ROI and aggressively capture new market share.' 
+    {
+      title: "Personal Branding",
+      items: ["Founder Profiling", "Thought Leadership", "PR Strategy", "Speaking Engagements", "LinkedIn Growth"]
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80',
-      title: 'Identity & Branding', 
-      tags: 'Logos • Visuals • Messaging',
-      desc: 'Memorable, premium visual identities that ensure your business stands out instantly.' 
+    {
+      title: "Content Production",
+      items: ["Video Production", "Commercials", "Photography", "Copywriting", "Podcasts"]
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80',
-      title: 'Social Media Content', 
-      tags: 'Reels • Production • Storytelling',
-      desc: 'Cinematic, scroll-stopping visuals that tell your story and build massive audience trust.' 
+    {
+      title: "Performance Marketing",
+      items: ["Meta Ads", "Google Ads", "Conversion Rate Optimization", "Lead Generation", "Retargeting"]
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
-      title: 'Influencer Collabs', 
-      tags: 'Creators • PR • Engagement',
-      desc: 'Connecting you with the perfect local creators to authentically reach entirely new audiences.' 
+    {
+      title: "Influencer Marketing",
+      items: ["Creator Strategy", "Campaign Management", "Talent Sourcing", "UGC Production", "Ambassador Programs"]
     },
+    {
+      title: "Social Media",
+      items: ["Platform Strategy", "Community Management", "Grid Aesthetics", "Viral Content", "Social Commerce"]
+    },
+    {
+      title: "Website Development",
+      items: ["UI/UX Design", "E-Commerce", "Web Applications", "Landing Pages", "SEO Architecture"]
+    },
+    {
+      title: "Mobile Apps",
+      items: ["iOS & Android", "App Design", "User Testing", "App Store Optimization", "Maintenance"]
+    },
+    {
+      title: "Creative Design",
+      items: ["Packaging", "OOH Advertising", "Print Media", "Merchandise", "Event Collateral"]
+    }
   ]
 
   return (
     <section className="bg-surface-container-low dark:bg-[#141414] py-24 md:py-32" id="services">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal>
-          <div className="mb-16 text-center space-y-4">
+          <div className="mb-16 md:mb-24 space-y-4 max-w-2xl">
             <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">What We Do</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED]">Everything your business needs online.</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED] leading-tight">
+              Everything Your Brand Needs.<br/>
+              One Growth Partner.
+            </h2>
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {services.map((service, index) => (
-            <ScrollReveal key={index} delay={index * 0.08}>
-              <motion.div 
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="bg-white/40 dark:bg-[#1A1A1A]/40 backdrop-blur-2xl p-4 rounded-3xl border border-white/60 dark:border-white/10 shadow-[8px_8px_24px_rgba(0,0,0,0.04),-8px_-8px_24px_rgba(255,255,255,0.8)] dark:shadow-[8px_8px_24px_rgba(0,0,0,0.5),-8px_-8px_24px_rgba(255,255,255,0.02)] hover:shadow-[12px_12px_32px_rgba(0,0,0,0.08),-12px_-12px_32px_rgba(255,255,255,1)] dark:hover:shadow-[12px_12px_32px_rgba(0,0,0,0.7),-12px_-12px_32px_rgba(255,255,255,0.03)] h-full group cursor-pointer flex flex-col transition-all duration-500 relative"
-              >
-                {/* Neumorphic Inner Glow Layer */}
-                <div className="absolute inset-0 rounded-3xl shadow-[inset_2px_2px_4px_rgba(255,255,255,0.9),inset_-2px_-2px_4px_rgba(0,0,0,0.02)] dark:shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05),inset_-2px_-2px_4px_rgba(0,0,0,0.2)] pointer-events-none z-10"></div>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+          {/* Mobile Accordion / Desktop Tabs List */}
+          <div className="w-full lg:w-1/3 flex flex-col gap-2">
+            {services.map((service, index) => (
+              <div key={index}>
+                {/* Mobile/Desktop Trigger */}
+                <button
+                  onClick={() => setActiveTab(index)}
+                  className={`w-full text-left py-4 px-6 rounded-xl transition-all duration-300 flex justify-between items-center ${
+                    activeTab === index 
+                      ? 'bg-primary text-white shadow-lg shadow-primary/20 scale-[1.02]' 
+                      : 'hover:bg-surface-container hover:dark:bg-[#1A1A1A] text-on-surface-variant dark:text-[#A0A0A0]'
+                  }`}
+                >
+                  <span className={`text-lg font-serif font-medium ${activeTab === index ? 'text-white' : 'dark:text-[#EDEDED]'}`}>
+                    {service.title}
+                  </span>
+                  <span className={`material-symbols-outlined transition-transform duration-300 ${activeTab === index ? 'rotate-180 text-white/70' : 'text-on-surface-variant/50 lg:hidden'}`}>
+                    expand_more
+                  </span>
+                </button>
                 
-                {/* Image Container */}
-                <div className="w-full h-48 md:h-56 bg-surface dark:bg-black rounded-2xl mb-6 relative overflow-hidden z-20">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
+                {/* Mobile Content Accordion */}
+                <AnimatePresence>
+                  {activeTab === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden lg:hidden"
+                    >
+                      <ul className="py-6 px-6 space-y-4">
+                        {service.items.map((item, idx) => (
+                          <li key={idx} className="flex items-center gap-3 text-on-surface-variant dark:text-[#A0A0A0]">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
 
-                <div className="px-2 pb-2 flex flex-col flex-grow z-20">
-                  <p className="text-[9px] md:text-[10px] font-sans tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase font-bold mb-3">{service.tags}</p>
-                  <h3 className="text-xl md:text-2xl font-medium mb-3 dark:text-[#EDEDED] font-serif leading-tight">{service.title}</h3>
-                  <p className="text-on-surface-variant dark:text-[#A0A0A0] text-sm md:text-base leading-relaxed mt-auto">{service.desc}</p>
-                </div>
+          {/* Desktop Content Area */}
+          <div className="hidden lg:block w-full lg:w-2/3 bg-surface dark:bg-[#0F0F0F] rounded-[2rem] p-12 border border-outline-variant/10 dark:border-white/5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="relative z-10"
+              >
+                <h3 className="text-3xl font-serif text-on-surface dark:text-[#EDEDED] mb-8">{services[activeTab].title}</h3>
+                <ul className="grid grid-cols-2 gap-y-6 gap-x-12">
+                  {services[activeTab].items.map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-4 group cursor-default">
+                      <div className="w-10 h-10 rounded-full bg-surface-container dark:bg-[#1A1A1A] flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                        <span className="material-symbols-outlined text-primary text-sm">done</span>
+                      </div>
+                      <span className="text-lg text-on-surface-variant dark:text-[#A0A0A0] group-hover:text-on-surface dark:group-hover:text-[#EDEDED] transition-colors">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
-            </ScrollReveal>
-          ))}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

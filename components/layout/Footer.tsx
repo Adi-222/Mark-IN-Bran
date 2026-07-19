@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-16">
         <div className="space-y-6 max-w-sm">
           <Link className="text-3xl font-serif font-bold text-on-surface dark:text-[#EDEDED]" href="/">Mark <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">In</span> Bran</Link>
-          <p className="text-on-surface-variant dark:text-[#A0A0A0]">We curate digital experiences for local legends. Vibe-coded, result-driven, human-centered.</p>
+          <p className="text-on-surface-variant dark:text-[#A0A0A0]">Building Brands People Remember.</p>
           <div className="flex gap-4">
             <a className="w-10 h-10 rounded-full border border-outline-variant/30 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="#">
               <span className="material-symbols-outlined text-base">language</span>
@@ -19,37 +19,43 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 md:gap-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
           <div className="space-y-4">
-            <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Navigation</h4>
+            <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Company</h4>
             <ul className="space-y-2 text-on-surface-variant dark:text-[#A0A0A0]">
-              <li><Link className="hover:text-primary transition-colors" href="/#work">Work</Link></li>
-              <li><Link className="hover:text-primary transition-colors" href="/#services">Services</Link></li>
-              <li><Link className="hover:text-primary transition-colors" href="/#about">About</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/#about">About Us</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/#founder">Founder</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="#">Careers</Link></li>
               <li><Link className="hover:text-primary transition-colors" href="/#contact">Contact</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Sectors</h4>
+            <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Expertise</h4>
             <ul className="space-y-2 text-on-surface-variant dark:text-[#A0A0A0]">
-              <li><a className="hover:text-primary transition-colors" href="#">Hospitality</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Wellness</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Retail</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Professional</a></li>
+              <li><Link className="hover:text-primary transition-colors" href="/#services">Services</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/#work">Case Studies</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/#industries">Industries</Link></li>
             </ul>
           </div>
-          <div className="space-y-4 hidden sm:block">
+          <div className="space-y-4">
+            <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Resources</h4>
+            <ul className="space-y-2 text-on-surface-variant dark:text-[#A0A0A0]">
+              <li><Link className="hover:text-primary transition-colors" href="/#journal">Growth Journal</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="#">Community</Link></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
             <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Legal</h4>
             <ul className="space-y-2 text-on-surface-variant dark:text-[#A0A0A0]">
-              <li><a className="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+              <li><Link className="hover:text-primary transition-colors" href="#">Privacy Policy</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="#">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-outline-variant/10 dark:border-white/8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-on-surface-variant dark:text-[#A0A0A0]">
         <p>© 2025 Mark <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">In</span> Bran. All rights reserved.</p>
-        <p>Made with ♥ for small business.</p>
+        <p>Built for the future.</p>
       </div>
     </footer>
   )

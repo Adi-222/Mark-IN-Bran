@@ -1,13 +1,12 @@
 'use client'
 import Image from 'next/image'
-import Link from 'next/link'
 import ScrollReveal from '../ui/ScrollReveal'
 import { motion, Variants, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 export default function Work() {
   const containerRef = useRef(null)
-  // refs for each project card to control cross‑fade based on 50% visibility
+  
   const left1Ref = useRef(null)
   const right2Ref = useRef(null)
   const left3Ref = useRef(null)
@@ -53,7 +52,7 @@ export default function Work() {
 
   const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
   }
 
   return (
@@ -61,7 +60,7 @@ export default function Work() {
       <ScrollReveal>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-24">
           <div className="space-y-4">
-            <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">Selected Work</span>
+            <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">Selected Work</span>
             <motion.h2
               variants={{
                 hidden: { opacity: 1 },
@@ -75,7 +74,7 @@ export default function Work() {
               viewport={{ once: false, amount: 0.5 }}
               className="text-4xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED] mt-4"
             >
-              {"Built for real businesses.".split("").map((char, index) => (
+              {"Brands We've Helped Build".split("").map((char, index) => (
                 <motion.span
                   key={index}
                   variants={{
@@ -88,20 +87,20 @@ export default function Work() {
               ))}
             </motion.h2>
           </div>
-          <p className="max-w-xs text-on-surface-variant dark:text-[#A0A0A0]">We don&apos;t do generic. Every site is custom-tailored to the brand&apos;s unique energy.</p>
+          <p className="max-w-xs text-on-surface-variant dark:text-[#A0A0A0]">We don&apos;t do generic. Every brand is custom-tailored to tell a unique story.</p>
         </div>
       </ScrollReveal>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
-        {/* Case Study 1 - Left */}
+        
+        {/* Case Study 1 - Left (Estate Coffee) */}
         <motion.div
           variants={leftCardVariants}
           initial="hidden"
           animate={left1InView ? "visible" : "hidden"}
           ref={left1Ref}
-          className="md:col-span-7 group cursor-pointer"
+          className="md:col-span-7 group cursor-default"
         >
-
           <div className="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
             <Image
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxj47TRJScMDtoIUoNFmqDQb-iT3j-Rpm9_E6UMAiFfjaMgaqHGggzKch0XJoWorur5BzRgCxqlbvtNl7jSkOLWodB7hqSdJp_Ek4wjLuoLLhu-F8DbMRZZbTbJHBk-nh20Yw7k5wnSSJgtFAacHr770o8yCCd_chm45vQdEUcZDMQZd2N5Ciw5dtQ6y_aAmfvrHOmYci9L-alASs_LpWLMNsPq0xiX6IReuNQKGRoTulzEyDAlNzWW1MPfFOhfnGRb6xPWQy-Cp0"
@@ -110,9 +109,6 @@ export default function Work() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
-              <span className="bg-surface text-on-surface px-6 py-3 rounded-full font-medium shadow-xl translate-y-4 group-hover:translate-y-0 transition-all duration-500">View Project</span>
-            </div>
           </div>
           <div className="flex justify-between items-start">
             <div>
@@ -123,16 +119,15 @@ export default function Work() {
             </div>
             <motion.span variants={fadeUpVariant} className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
           </div>
-
         </motion.div>
 
-        {/* Case Study 2 - Right */}
+        {/* Case Study 2 - Right (Luna) */}
         <motion.div
           variants={rightCardVariants}
           initial="hidden"
           animate={right2InView ? "visible" : "hidden"}
           ref={right2Ref}
-          className="md:col-span-5 md:mt-32 group cursor-pointer"
+          className="md:col-span-5 md:mt-32 group cursor-default"
         >
           <div className="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
             <Image
@@ -142,9 +137,6 @@ export default function Work() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
-              <span className="bg-surface text-on-surface px-6 py-3 rounded-full font-medium shadow-xl translate-y-4 group-hover:translate-y-0 transition-all duration-500">View Project</span>
-            </div>
           </div>
           <div className="flex justify-between items-start">
             <div>
@@ -157,13 +149,13 @@ export default function Work() {
           </div>
         </motion.div>
 
-        {/* Case Study 3 - Left */}
+        {/* Case Study 3 - Left (Summit) */}
         <motion.div
           variants={leftCardVariants}
           initial="hidden"
           animate={left3InView ? "visible" : "hidden"}
           ref={left3Ref}
-          className="md:col-span-5 group cursor-pointer"
+          className="md:col-span-5 group cursor-default"
         >
           <div className="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
             <Image
@@ -173,9 +165,6 @@ export default function Work() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
-              <span className="bg-surface text-on-surface px-6 py-3 rounded-full font-medium shadow-xl translate-y-4 group-hover:translate-y-0 transition-all duration-500">View Project</span>
-            </div>
           </div>
           <div className="flex justify-between items-start">
             <div>
@@ -188,13 +177,13 @@ export default function Work() {
           </div>
         </motion.div>
 
-        {/* Case Study 4 - Right */}
+        {/* Case Study 4 - Right (Maison) */}
         <motion.div
           variants={rightCardVariants}
           initial="hidden"
           animate={right4InView ? "visible" : "hidden"}
           ref={right4Ref}
-          className="md:col-span-7 md:-mt-32 group cursor-pointer"
+          className="md:col-span-7 md:-mt-32 group cursor-default"
         >
           <div className="relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
             <Image
@@ -204,9 +193,6 @@ export default function Work() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
-              <span className="bg-surface text-on-surface px-6 py-3 rounded-full font-medium shadow-xl translate-y-4 group-hover:translate-y-0 transition-all duration-500">View Project</span>
-            </div>
           </div>
           <div className="flex justify-between items-start">
             <div>
@@ -218,6 +204,7 @@ export default function Work() {
             <motion.span variants={fadeUpVariant} className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
           </div>
         </motion.div>
+
       </div>
     </section>
   )

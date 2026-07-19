@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' });
 
 export const metadata: Metadata = {
-  title: 'Mark In Bran.',
-  description: 'websites for coffee shops, salons, dentists & more. We blend editorial craft with conversion science.',
+  title: 'Mark In Bran — Building Brands People Remember',
+  description: 'Mark In Bran is an AI-powered brand growth company that helps founders, startups, creators, and businesses build memorable brands through branding, content, AI, marketing, technology, and digital experiences.',
 };
 
 export default function RootLayout({

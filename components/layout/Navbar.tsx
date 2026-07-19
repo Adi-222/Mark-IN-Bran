@@ -24,9 +24,10 @@ export default function Navbar() {
         <div className="flex items-center gap-12">
           <Link className="text-2xl font-bold font-serif text-on-surface dark:text-[#EDEDED] tracking-tight" href="/">Mark <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">In</span> Bran</Link>
           <div className="hidden md:flex items-center gap-8">
-            <Link className="text-on-surface-variant dark:text-[#A0A0A0] hover:text-primary transition-colors" href="/#work">Work</Link>
             <Link className="text-on-surface-variant dark:text-[#A0A0A0] hover:text-primary transition-colors" href="/#services">Services</Link>
             <Link className="text-on-surface-variant dark:text-[#A0A0A0] hover:text-primary transition-colors" href="/#about">About</Link>
+            <Link className="text-on-surface-variant dark:text-[#A0A0A0] hover:text-primary transition-colors" href="/#work">Work</Link>
+            <Link className="text-on-surface-variant dark:text-[#A0A0A0] hover:text-primary transition-colors" href="/#creators">Creators</Link>
             <Link className="text-on-surface-variant dark:text-[#A0A0A0] hover:text-primary transition-colors" href="/#contact">Contact</Link>
           </div>
         </div>
@@ -36,7 +37,7 @@ export default function Navbar() {
             onClick={openContactModal}
             className="hidden md:block bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-2.5 rounded-full font-medium active:scale-95 transition-transform hover:shadow-lg"
           >
-            Start a Project
+            Start Your Brand Journey
           </button>
           <MobileNav />
         </div>

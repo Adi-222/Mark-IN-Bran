@@ -45,22 +45,22 @@ export default function Hero() {
           className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-on-background dark:text-[#EDEDED] leading-[1.1] tracking-tight flex flex-col items-center gap-y-2 md:gap-y-4 cursor-default"
         >
           <motion.div variants={getContainerVariants(0.1)} initial="hidden" animate="visible">
-            {renderText("We build websites")}
+            {renderText("We Don't Market Brands.")}
           </motion.div>
           <motion.div variants={getContainerVariants(0.9)} initial="hidden" animate="visible">
-            {renderText("your customers", true)}
+            {renderText("We Build Brands", true)}
           </motion.div>
           <motion.div variants={getContainerVariants(1.7)} initial="hidden" animate="visible" className="flex items-center justify-center">
-            {renderText("can't ignore.")}
+            {renderText("People Remember.")}
           </motion.div>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.6, duration: 0.8 }}
-          className="text-lg md:text-xl text-on-surface-variant dark:text-[#A0A0A0] max-w-2xl mx-auto font-body"
+          className="text-lg md:text-xl text-on-surface-variant dark:text-[#A0A0A0] max-w-3xl mx-auto font-body"
         >
-          Custom websites for coffee shops, salons, dentists & more. We blend editorial craft with conversion science.
+          From startups to established companies, Mark In Bran combines AI, storytelling, branding, technology and content to turn businesses into brands people trust.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function Hero() {
             whileTap={{ scale: 0.97 }}
             className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg transition-all"
           >
-            Book a Free Call
+            Start Your Brand Journey
           </motion.button>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
             <Link href="#work" className="inline-block w-full sm:w-auto text-on-surface dark:text-[#EDEDED] hover:underline decoration-blue-500 underline-offset-8 px-8 py-4 text-lg font-medium transition-all">
