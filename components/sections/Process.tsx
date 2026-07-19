@@ -1,167 +1,113 @@
 'use client'
-import { useRef } from 'react'
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
 import { motion } from 'framer-motion'
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
+import ScrollReveal from '../ui/ScrollReveal'
 
 export default function Process() {
-  const containerRef = useRef<HTMLElement>(null)
-
-  useGSAP(() => {
-    // Watermark Parallax
-    gsap.to(".watermark-process", {
-      yPercent: 30,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    // Elegant Typewriter Reveal for Title
-    const typeWriterTl = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 2,
-      scrollTrigger: {
-        trigger: ".process-title",
-        start: "top 85%",
-      }
-    });
-
-    typeWriterTl.from(".process-char", {
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "power2.out",
-    });
-  }, { scope: containerRef });
-
-  const renderText = (text: string) => {
-    return text.split('').map((char, index) => (
-      <span key={index} className="process-char inline-block" style={{ willChange: "filter, opacity, transform" }}>
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ));
-  };
-
   const steps = [
-    { 
-      num: '01', 
-      title: 'Discovery', 
-      tagline: 'The Foundation',
-      quote: '"A brand is no longer what we tell the consumer it is—it is what consumers tell each other it is."',
-      desc: 'We dive deep into your vision, market dynamics, and consumer behavior to craft a blueprint for positioning and long-term growth.',
-      color: 'from-[#0A0F1F] to-[#121B36]', // Deep Midnight Blue
-      accent: 'text-blue-400',
-      border: 'border-blue-500/20'
-    },
-    { 
-      num: '02', 
-      title: 'Identity', 
-      tagline: 'Visual Ecosystem',
-      quote: '"Design is the silent ambassador of your brand."',
-      desc: 'From logo to typography, we design a premium visual and verbal identity that captures attention and commands respect.',
-      color: 'from-[#051F16] to-[#0A3827]', // Deep Emerald
-      accent: 'text-emerald-400',
-      border: 'border-emerald-500/20'
-    },
-    { 
-      num: '03', 
-      title: 'Storytelling', 
-      tagline: 'Narrative Architecture',
-      quote: '"Marketing is no longer about the stuff that you make, but about the stories you tell."',
-      desc: 'We produce high-impact assets—from video to copy—that seamlessly articulate your unique story across all digital platforms.',
-      color: 'from-[#230C15] to-[#401224]', // Deep Ruby
-      accent: 'text-rose-400',
-      border: 'border-rose-500/20'
-    },
-    { 
-      num: '04', 
-      title: 'Scale', 
-      tagline: 'Growth & Loyalty',
-      quote: '"Good marketing makes the company look smart. Great marketing makes the customer feel smart."',
-      desc: 'We execute powerful go-to-market campaigns to launch your brand and continuously optimize performance for sustainable scale.',
-      color: 'from-[#1A1104] to-[#362208]', // Deep Bronze
-      accent: 'text-amber-400',
-      border: 'border-amber-500/20'
-    },
+    { num: '01', icon: 'explore', title: 'Discovery', desc: 'Understanding your vision, goals, and the legacy you want to build.' },
+    { num: '02', icon: 'search', title: 'Research', desc: 'Deep dive into market dynamics, competitors, and consumer behavior.' },
+    { num: '03', icon: 'lightbulb', title: 'Strategy', desc: 'Crafting the blueprint for your brand positioning and growth roadmap.' },
+    { num: '04', icon: 'palette', title: 'Identity', desc: 'Designing a premium, memorable visual and verbal brand ecosystem.' },
+    { num: '05', icon: 'video_camera_front', title: 'Content', desc: 'Producing high-impact assets that tell your story across all platforms.' },
+    { num: '06', icon: 'rocket_launch', title: 'Launch', desc: 'Executing go-to-market campaigns that capture attention and drive action.' },
+    { num: '07', icon: 'trending_up', title: 'Scale', desc: 'Optimizing performance, expanding reach, and building long-term loyalty.' },
   ]
 
-  return (
-    <section ref={containerRef} className="relative bg-[#050505] text-white pt-32 pb-40 px-4 sm:px-6 lg:px-12 overflow-hidden" id="process">
-      
-      {/* Ghost Watermark */}
-      <div 
-        className="watermark-process absolute top-40 left-1/2 select-none z-0 font-serif text-[180px] md:text-[240px] font-bold tracking-tighter whitespace-nowrap pointer-events-none opacity-[0.05]"
-        style={{ transform: "translateX(-50%)" }}
-      >
-        OUR <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">METHOD</span>
-      </div>
+  const typeLetterVariants = {
+    hidden: { opacity: 0.25, filter: "blur(2px)" },
+    visible: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.3 } }
+  }
 
-      <div className="text-center mb-32 md:mb-48 relative z-10">
-        <h2 className="process-title font-serif text-5xl sm:text-6xl md:text-[120px] lg:text-[140px] leading-none tracking-[0.1em] mb-6 uppercase flex justify-center flex-wrap">
-          {renderText("PROCESS")}
-        </h2>
-        <p className="font-serif text-xl md:text-3xl text-white/60 max-w-3xl mx-auto italic">
-          The art and science of building brands people remember.
-        </p>
-      </div>
+  const getContainerVariants = (delay: number) => ({
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05, delayChildren: delay }
+    }
+  })
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {steps.map((step, index) => (
-          <div 
-            key={index}
-            className="sticky w-full"
-            style={{ 
-              top: `calc(15vh + ${index * 30}px)`, 
-              marginBottom: index === steps.length - 1 ? '10vh' : '40vh' 
-            }}
+  const renderText = (text: string, isItalic = false) => {
+    return text.split(' ').map((word, wordIndex, array) => (
+      <span key={wordIndex} className={`inline-block ${wordIndex !== array.length - 1 ? 'mr-3 md:mr-4' : ''}`}>
+        {word.split('').map((char, charIndex) => (
+          <motion.span
+            key={charIndex}
+            variants={typeLetterVariants}
+            className={`inline-block ${isItalic ? 'text-on-surface-variant dark:text-[#888888] italic' : ''}`}
           >
-            <motion.div 
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className={`w-full rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-20 flex flex-col lg:flex-row gap-12 lg:gap-24 bg-gradient-to-br ${step.color} shadow-[0_-15px_40px_rgba(0,0,0,0.4)] border-t ${step.border} backdrop-blur-sm relative overflow-hidden`}
-            >
-              {/* Internal abstract glow for extra depth */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            {char}
+          </motion.span>
+        ))}
+      </span>
+    ))
+  }
 
-              {/* Left: Number and Title */}
-              <div className="flex-1 flex flex-col justify-between items-start relative z-10">
-                <div>
-                  <span className={`text-sm font-bold tracking-[0.2em] uppercase ${step.accent}`}>{step.tagline}</span>
-                  <h3 className="text-5xl md:text-7xl font-serif mt-4 font-medium text-white">{step.title}</h3>
-                </div>
-                <div className="text-[100px] md:text-[160px] font-serif font-bold text-white/5 leading-none mt-12 pointer-events-none select-none">
-                  {step.num}
-                </div>
-              </div>
+  return (
+    <section className="bg-surface dark:bg-[#0F0F0F] py-24 md:py-40" id="process">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        <ScrollReveal>
+          <div className="mb-20 md:mb-32 flex flex-col lg:flex-row lg:items-end justify-between gap-10 border-b border-outline-variant/20 dark:border-white/10 pb-16">
+            <div className="space-y-6 max-w-2xl">
+              <span className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase">Our Process</span>
+              <motion.h2 
+                className="text-5xl md:text-7xl font-serif font-medium text-on-surface dark:text-[#EDEDED] leading-[1.1]"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <motion.div variants={getContainerVariants(0.1)}>{renderText("From Idea")}</motion.div>
+                <motion.div variants={getContainerVariants(0.6)}>{renderText("To Legacy.", true)}</motion.div>
+              </motion.h2>
+            </div>
+            <div className="max-w-md lg:pb-4">
+              <p className="text-on-surface-variant dark:text-[#A0A0A0] text-lg md:text-xl font-light leading-relaxed">
+                A meticulous, step-by-step methodology designed to craft brands that command attention and drive sustainable growth.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
 
-              {/* Right: Desc and Quote */}
-              <div className="flex-1 flex flex-col justify-center space-y-12 relative z-10">
-                <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed">
-                  {step.desc}
-                </p>
+        <div className="space-y-0">
+          {steps.map((step, index) => (
+            <ScrollReveal key={index} delay={0.1}>
+              <motion.div 
+                whileHover={{ x: 12 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="group border-b border-outline-variant/20 dark:border-white/10 py-10 md:py-16 flex flex-col md:flex-row md:items-center gap-6 md:gap-12 transition-colors duration-500 cursor-default hover:bg-blue-500/[0.02] dark:hover:bg-blue-500/[0.03] -mx-6 px-6 md:mx-0 md:px-4 rounded-xl md:rounded-none"
+              >
+                {/* Number */}
+                <div className="w-16 md:w-24 shrink-0">
+                  <span className="font-serif text-3xl md:text-5xl text-on-surface-variant/30 dark:text-[#555555] group-hover:text-blue-500 transition-colors duration-500 italic">
+                    {step.num}
+                  </span>
+                </div>
                 
-                <div className="relative pl-8 md:pl-10 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[2px] before:bg-gradient-to-b before:from-white/40 before:to-transparent">
-                  <span className="material-symbols-outlined text-4xl text-white/10 absolute -top-4 -left-4">format_quote</span>
-                  <p className="font-serif text-2xl md:text-3xl italic text-white/95 leading-snug">
-                    {step.quote}
+                {/* Title */}
+                <div className="w-full md:w-1/3 shrink-0">
+                  <h3 className="text-3xl md:text-5xl font-serif text-on-surface dark:text-[#EDEDED] group-hover:text-blue-500 transition-colors duration-500">
+                    {step.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-on-surface-variant dark:text-[#A0A0A0] font-light leading-relaxed max-w-xl">
+                    {step.desc}
                   </p>
                 </div>
-              </div>
 
-            </motion.div>
-          </div>
-        ))}
+                {/* Icon */}
+                <div className="shrink-0 hidden lg:flex items-center justify-center w-16 h-16 rounded-full border border-outline-variant/30 dark:border-white/10 group-hover:border-blue-500 group-hover:bg-blue-500/10 transition-all duration-500">
+                  <span className="material-symbols-outlined text-2xl text-on-surface-variant dark:text-[#A0A0A0] group-hover:text-blue-500 transition-colors duration-500">
+                    {step.icon}
+                  </span>
+                </div>
+              </motion.div>
+            </ScrollReveal>
+          ))}
+        </div>
+        
       </div>
     </section>
   )
