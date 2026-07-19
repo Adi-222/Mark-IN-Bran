@@ -84,10 +84,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating Decoration */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 dark:bg-primary/10 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 right-0 translate-x-1/4 w-80 h-80 bg-tertiary-fixed/10 dark:bg-tertiary/20 rounded-full blur-[80px]"></div>
-
       {/* Infinite Marquee */}
       <motion.div
         initial={{ opacity: 0 }}

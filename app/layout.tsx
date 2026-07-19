@@ -3,6 +3,7 @@ import { Inter, Fraunces } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import ContactModal from '@/components/ui/ContactModal';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import CursorGlow from '@/components/ui/CursorGlow';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -25,6 +26,7 @@ export default function RootLayout({
       </head>
       <body className="bg-surface dark:bg-[#0F0F0F] text-on-surface dark:text-[#EDEDED] font-body selection:bg-primary-fixed selection:text-on-primary-fixed transition-colors duration-300 antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <CursorGlow />
           {children}
           <ContactModal />
           <WhatsAppButton />
