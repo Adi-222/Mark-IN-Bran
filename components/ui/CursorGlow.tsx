@@ -37,7 +37,7 @@ export default function CursorGlow() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-0 w-[400px] h-[400px] rounded-full bg-blue-500/15 dark:bg-blue-500/20 blur-[100px] mix-blend-normal hidden md:block"
+      className="pointer-events-none fixed top-0 left-0 z-[50] w-[400px] h-[400px] rounded-full bg-blue-500/15 dark:bg-blue-500/20 blur-[100px] mix-blend-normal hidden md:block"
       style={{
         x: smoothX,
         y: smoothY,
