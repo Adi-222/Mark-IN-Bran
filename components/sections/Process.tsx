@@ -1,8 +1,18 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import ScrollReveal from '../ui/ScrollReveal'
 
 export default function Process() {
+  const [loopKey, setLoopKey] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoopKey(prev => prev + 1)
+    }, 6000) // Restart animation every 6 seconds
+    return () => clearInterval(interval)
+  }, [])
+
   const steps = [
     { num: '01', icon: 'explore', title: 'Discovery', desc: 'Understanding your vision, goals, and the legacy you want to build.' },
     { num: '02', icon: 'search', title: 'Research', desc: 'Deep dive into market dynamics, competitors, and consumer behavior.' },
@@ -26,9 +36,9 @@ export default function Process() {
     }
   })
 
-  const renderText = (text: string, isItalic = false) => {
+  const renderText = (text: string, isItalic = false, isParagraph = false) => {
     return text.split(' ').map((word, wordIndex, array) => (
-      <span key={wordIndex} className={`inline-block ${wordIndex !== array.length - 1 ? 'mr-3 md:mr-4' : ''}`}>
+      <span key={wordIndex} className={`inline-block ${wordIndex !== array.length - 1 ? (isParagraph ? 'mr-1.5' : 'mr-3 md:mr-4') : ''}`}>
         {word.split('').map((char, charIndex) => (
           <motion.span
             key={charIndex}
@@ -45,7 +55,7 @@ export default function Process() {
   return (
     <section className="bg-surface dark:bg-[#0F0F0F] py-16 md:py-32" id="process">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         <ScrollReveal>
           <div className="mb-20 md:mb-32 flex flex-col lg:flex-row lg:items-end justify-between gap-10 border-b border-outline-variant/20 dark:border-white/10 pb-16">
             <div className="space-y-6 max-w-2xl">
@@ -61,9 +71,16 @@ export default function Process() {
               </motion.h2>
             </div>
             <div className="max-w-md lg:pb-4">
-              <p className="text-on-surface-variant dark:text-[#A0A0A0] text-lg md:text-xl font-light leading-relaxed">
-                A meticulous, step-by-step methodology designed to craft brands that command attention and drive sustainable growth.
-              </p>
+              <motion.p 
+                key={`paragraph-${loopKey}`}
+                className="text-blue-600 dark:text-blue-400 text-lg md:text-xl font-light leading-relaxed"
+                initial="hidden"
+                animate="visible"
+                variants={getContainerVariants(1.2)}
+              >
+                {renderText("At Mark In Bran, we don't just create marketing campaigns.", false, true)}<br className="hidden md:block" />
+                {renderText("We engineer growth, build trust, and create brands people remember.", false, true)}
+              </motion.p>
             </div>
           </div>
         </ScrollReveal>
@@ -71,7 +88,7 @@ export default function Process() {
         <div className="space-y-0">
           {steps.map((step, index) => (
             <ScrollReveal key={index} delay={0.1}>
-              <motion.div 
+              <motion.div
                 whileHover={{ x: 12 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="group border-b border-outline-variant/20 dark:border-white/10 py-8 md:py-16 flex flex-col md:flex-row md:items-center gap-4 md:gap-12 transition-colors duration-500 cursor-default hover:bg-blue-500/[0.02] dark:hover:bg-blue-500/[0.03] -mx-4 px-4 md:mx-0 md:px-4 rounded-xl md:rounded-none"
@@ -82,7 +99,7 @@ export default function Process() {
                     {step.num}
                   </span>
                 </div>
-                
+
                 {/* Title */}
                 <div className="w-full md:w-1/3 shrink-0">
                   <h3 className="text-3xl md:text-5xl font-serif text-on-surface dark:text-[#EDEDED] group-hover:text-blue-500 transition-colors duration-500">
@@ -107,7 +124,7 @@ export default function Process() {
             </ScrollReveal>
           ))}
         </div>
-        
+
       </div>
     </section>
   )
