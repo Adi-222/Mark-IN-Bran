@@ -45,6 +45,7 @@ export default function MobileNav() {
                 <Link href="/#work" onClick={closeNav} className="text-lg font-medium text-on-surface dark:text-[#EDEDED] hover:text-primary transition-colors">Work</Link>
                 <Link href="/#services" onClick={closeNav} className="text-lg font-medium text-on-surface dark:text-[#EDEDED] hover:text-primary transition-colors">Services</Link>
                 <Link href="/#about" onClick={closeNav} className="text-lg font-medium text-on-surface dark:text-[#EDEDED] hover:text-primary transition-colors">About</Link>
+                <Link href="/blog" onClick={closeNav} className="text-lg font-medium text-on-surface dark:text-[#EDEDED] hover:text-primary transition-colors">Blog</Link>
                 <Link href="/#contact" onClick={closeNav} className="text-lg font-medium text-on-surface dark:text-[#EDEDED] hover:text-primary transition-colors">Contact</Link>
                 <hr className="border-outline-variant/10 dark:border-white/8"/>
                 <button 
