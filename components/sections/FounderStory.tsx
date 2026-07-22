@@ -46,7 +46,7 @@ export default function FounderStory() {
                 <p className="font-bold text-2xl mb-1">Raunak Kr Shail</p>
                 <p className="text-white/90 text-sm font-medium mb-3">Founder & CEO, Mark In Bran</p>
                 <p className="text-white/70 text-xs italic leading-relaxed border-l-2 border-primary pl-3">
-                  "Brands built by memories, emotions, and trust."
+                  &quot;Brands built by memories, emotions, and trust.&quot;
                 </p>
               </div>
             </div>
@@ -107,12 +107,12 @@ export default function FounderStory() {
                   From Kolkata to Badrinath, Varanasi, Mumbai, Goa, Kanyakumari, and across India aboard the legendary Vivek Express, every destination became a classroom. I observed how buying decisions change from one region to another, how trust is built differently across cultures, and how stories travel faster than advertisements.
                 </p>
                 <p>
-                  Most importantly, I discovered that India isn't one market. It is thousands of micro-markets connected by emotion.
+                  Most importantly, I discovered that India isn&apos;t one market. It is thousands of micro-markets connected by emotion.
                 </p>
               </motion.div>
 
               <motion.div variants={itemVariants} className="space-y-5">
-                <h3 className="text-2xl font-serif font-medium text-on-surface dark:text-[#EDEDED] pb-2">The Athlete's Mindset</h3>
+                <h3 className="text-2xl font-serif font-medium text-on-surface dark:text-[#EDEDED] pb-2">The Athlete&apos;s Mindset</h3>
                 <p>
                   Long before entrepreneurship, I was a cricketer. Representing district-level teams and captaining competitive sides taught me lessons that continue to guide my business: Discipline over motivation. Process over shortcuts. Teamwork over individual success. The same principles now define how we build brands.
                 </p>
@@ -121,7 +121,7 @@ export default function FounderStory() {
               <motion.div variants={itemVariants} className="space-y-5">
                 <h3 className="text-2xl font-serif font-medium text-on-surface dark:text-[#EDEDED] pb-2">Why Mark In Bran Exists</h3>
                 <p>
-                  Mark In Bran was never created to become another marketing agency. It was built as a Brand Growth Ecosystem. Our work doesn't begin with designing a logo or posting content. Every client goes through a structured strategic framework where we deeply understand their vision, business model, customer psychology, and technology requirements.
+                  Mark In Bran was never created to become another marketing agency. It was built as a Brand Growth Ecosystem. Our work doesn&apos;t begin with designing a logo or posting content. Every client goes through a structured strategic framework where we deeply understand their vision, business model, customer psychology, and technology requirements.
                 </p>
                 <p>
                   Because marketing without understanding people is simply advertising. Branding begins with understanding human psychology.
@@ -137,7 +137,7 @@ export default function FounderStory() {
                   When these four work together, businesses stop competing on price and start competing on perception. 
                 </p>
                 <p className="font-semibold text-primary mt-6 text-xl md:text-2xl leading-snug">
-                  We don't just create marketing campaigns. We engineer growth, build trust, and create brands people remember.
+                  We don&apos;t just create marketing campaigns. We engineer growth, build trust, and create brands people remember.
                 </p>
               </motion.div>
 
