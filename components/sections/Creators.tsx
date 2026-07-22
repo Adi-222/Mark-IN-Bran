@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -159,7 +160,7 @@ export default function Creators() {
           <div className="reveal-left">
             <Link href="https://www.instagram.com/kajalpandey437?igsh=MWVjNHQxOWkwZm8wYg==" target="_blank" className={avatarCardClasses}>
               <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl border border-outline-variant rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden mb-3 shadow-md bg-surface-container dark:bg-[#1E1E1E]">
-                <img className="parallax-image w-full h-full object-cover" src="/creators/kajalpandey437.jpg" alt="@kajalpandey437" />
+                <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
               </div>
               <div className="overflow-hidden">
                 <p className="creator-name text-[10px] lg:text-xs font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">@kajalpandey437</p>
@@ -170,7 +171,7 @@ export default function Creators() {
           <div className="reveal-left">
             <Link href="https://www.instagram.com/keephustling4473_?igsh=Yno2Zm5qajMxc2Mx" target="_blank" className={cardClasses}>
               <div className="aspect-[4/3] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                <img className="parallax-image w-full h-full object-cover" src="/creators/keephustling4473_.jpg" alt="@keephustling4473_" />
+                <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
@@ -192,7 +193,7 @@ export default function Creators() {
               <div className="reveal-left">
                 <Link href="https://www.instagram.com/keephustling4473s?igsh=czcxdmYxcm9jdHFq" target="_blank" className={cardClasses}>
                   <div className="aspect-square bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="/creators/keephustling4473s.jpg" alt="@keephustling4473s" />
+                    <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
@@ -208,7 +209,7 @@ export default function Creators() {
               <div className="reveal-left">
                 <Link href="https://www.instagram.com/traveller_abhii?igsh=Nm1tdWJzMzEzZXh4" target="_blank" className={cardClasses}>
                   <div className="aspect-[3/5] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="/creators/traveller_abhii.jpg" alt="@traveller_abhii" />
+                    <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
@@ -227,7 +228,7 @@ export default function Creators() {
               <div className="reveal-right">
                 <Link href="https://www.instagram.com/succeedwithsarthak?igsh=dGdrb2dhZnJlNXls" target="_blank" className={cardClasses}>
                   <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="/creators/succeedwithsarthak.jpg" alt="@succeedwithsarthak" />
+                    <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
@@ -243,7 +244,7 @@ export default function Creators() {
               <div className="reveal-right">
                 <Link href="https://www.instagram.com/major_rudrashish?igsh=MWU1ZGtzZHg0a21sZg==" target="_blank" className={cardClasses}>
                   <div className="aspect-square bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="/creators/major_rudrashish.jpg" alt="@major_rudrashish" />
+                    <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
@@ -262,10 +263,10 @@ export default function Creators() {
           <div className="reveal-up relative flex flex-col mt-4">
             <Link href="https://www.instagram.com/withreeeet?igsh=MWozdmtwdWpueHJ4Mg==" target="_blank" className={cardClasses}>
               <div className="absolute -bottom-8 -left-8 w-20 h-20 lg:w-24 lg:h-24 rounded-full border-4 border-surface dark:border-[#1A1A1A] shadow-xl overflow-hidden z-20 bg-surface-container dark:bg-[#1E1E1E]">
-                <img className="parallax-image w-full h-full object-cover" src="/creators/withreeeet.jpg" alt="@withreeeet Avatar" />
+                <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
               </div>
               <div className="aspect-[16/9] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-5">
-                <img className="parallax-image w-full h-full object-cover" src="/creators/withreeeet.jpg" alt="@withreeeet" />
+                <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
@@ -284,7 +285,7 @@ export default function Creators() {
           <div className="reveal-right">
             <Link href="https://www.instagram.com/shwetas_talkies?igsh=MWltN3h1YjE5cGRkaQ==" target="_blank" className={cardClasses}>
               <div className="aspect-[4/3] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                <img className="parallax-image w-full h-full object-cover" src="/creators/shwetas_talkies.jpg" alt="@shwetas_talkies" />
+                <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
@@ -300,7 +301,7 @@ export default function Creators() {
           <div className="reveal-right">
             <Link href="https://www.instagram.com/unfitofit_official_?igsh=Z2xsNWU1cjhuYzcx" target="_blank" className={cardClasses}>
               <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4 relative z-10">
-                <img className="parallax-image w-full h-full object-cover" src="/creators/unfitofit_official_.jpg" alt="@unfitofit_official_" />
+                <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
@@ -320,7 +321,7 @@ export default function Creators() {
         <div className="reveal-left">
           <Link href="https://www.instagram.com/keephustling4473s?igsh=czcxdmYxcm9jdHFq" target="_blank" className={cardClasses}>
             <div className="aspect-square bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4 relative">
-              <img className="parallax-image w-full h-full object-cover" src="/creators/keephustling4473s.jpg" alt="@keephustling4473s" />
+              <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
@@ -336,7 +337,7 @@ export default function Creators() {
         <div className="reveal-right">
           <Link href="https://www.instagram.com/succeedwithsarthak?igsh=dGdrb2dhZnJlNXls" target="_blank" className={cardClasses}>
             <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="/creators/succeedwithsarthak.jpg" alt="@succeedwithsarthak" />
+              <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
@@ -352,7 +353,7 @@ export default function Creators() {
         <div className="reveal-left">
           <Link href="https://www.instagram.com/shwetas_talkies?igsh=MWltN3h1YjE5cGRkaQ==" target="_blank" className={cardClasses}>
             <div className="aspect-[4/3] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="/creators/shwetas_talkies.jpg" alt="@shwetas_talkies" />
+              <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
@@ -368,7 +369,7 @@ export default function Creators() {
         <div className="reveal-right">
           <Link href="https://www.instagram.com/unfitofit_official_?igsh=Z2xsNWU1cjhuYzcx" target="_blank" className={cardClasses}>
             <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="/creators/unfitofit_official_.jpg" alt="@unfitofit_official_" />
+              <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
@@ -384,7 +385,7 @@ export default function Creators() {
         <div className="reveal-up relative">
           <Link href="https://www.instagram.com/withreeeet?igsh=MWozdmtwdWpueHJ4Mg==" target="_blank" className={cardClasses}>
             <div className="aspect-[16/9] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="/creators/withreeeet.jpg" alt="@withreeeet" />
+              <Image fill sizes="(max-width: 768px) 100vw, 50vw"  src="" alt="" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
