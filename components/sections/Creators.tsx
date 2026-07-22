@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -44,38 +45,38 @@ export default function Creators() {
 
     const triggerOpts = (el: any) => ({
       trigger: el,
-      start: "center bottom", // Triggers when exactly 50% of the element enters from bottom
-      end: "center top",      // Reverses when exactly 50% of the element leaves from top
+      start: "top 85%",       // Enter slightly before hitting the bottom of the screen
+      end: "bottom 15%",      // Reverse only when the bottom of the element is almost off the top of the screen
       toggleActions: "play reverse play reverse",
     });
 
-    // Lateral Entrances
+    // Enhanced Lateral Entrances
     gsap.utils.toArray(".reveal-left").forEach((el: any) => {
       gsap.from(el, {
-        x: -80,
+        x: -120, // More dramatic slide
         opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
+        duration: 1.4, // Slightly longer duration for the dramatic ease
+        ease: "power4.out", // Snappy, enhanced easing similar to Work section's bezier
         scrollTrigger: triggerOpts(el),
       });
     });
 
     gsap.utils.toArray(".reveal-right").forEach((el: any) => {
       gsap.from(el, {
-        x: 80,
+        x: 120,
         opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
+        duration: 1.4,
+        ease: "power4.out",
         scrollTrigger: triggerOpts(el),
       });
     });
 
     gsap.utils.toArray(".reveal-up").forEach((el: any) => {
       gsap.from(el, {
-        y: 80,
+        y: 120,
         opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
+        duration: 1.4,
+        ease: "power4.out",
         scrollTrigger: triggerOpts(el),
       });
     });
@@ -127,8 +128,8 @@ export default function Creators() {
     ));
   };
 
-  const cardClasses = "flex flex-col cursor-pointer transition-all duration-[600ms] ease-out group-hover:opacity-40 group-hover:blur-[2px] group-hover:scale-[0.98] hover:!opacity-100 hover:!blur-none hover:!scale-[1.03] hover:z-30 relative";
-  const avatarCardClasses = "flex flex-col items-center cursor-pointer transition-all duration-[600ms] ease-out group-hover:opacity-40 group-hover:blur-[2px] group-hover:scale-[0.98] hover:!opacity-100 hover:!blur-none hover:!scale-[1.03] hover:z-30 relative";
+  const cardClasses = "flex flex-col cursor-pointer transition-all duration-[600ms] ease-out group-hover:opacity-40 group-hover:blur-[2px] group-hover:scale-[0.98] hover:!opacity-100 hover:!blur-none hover:!scale-[1.03] hover:z-30 relative block";
+  const avatarCardClasses = "flex flex-col items-center cursor-pointer transition-all duration-[600ms] ease-out group-hover:opacity-40 group-hover:blur-[2px] group-hover:scale-[0.98] hover:!opacity-100 hover:!blur-none hover:!scale-[1.03] hover:z-30 relative block";
 
   return (
     <section ref={containerRef} className="relative pt-32 pb-40 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto overflow-hidden" id="creators">
@@ -156,30 +157,30 @@ export default function Creators() {
         {/* Col 1 (Left) */}
         <div className="w-[18%] flex flex-col gap-32 pt-56">
           <div className="reveal-left">
-            <div className={avatarCardClasses}>
+            <Link href="https://www.instagram.com/kajalpandey437?igsh=MWVjNHQxOWkwZm8wYg==" target="_blank" className={avatarCardClasses}>
               <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl border border-outline-variant rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden mb-3 shadow-md bg-surface-container dark:bg-[#1E1E1E]">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Sarah L." />
+                <img className="parallax-image w-full h-full object-cover" src="/creators/kajalpandey437.jpg" alt="@kajalpandey437" />
               </div>
               <div className="overflow-hidden">
-                <p className="creator-name text-[10px] lg:text-xs font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">Sarah L.</p>
+                <p className="creator-name text-[10px] lg:text-xs font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">@kajalpandey437</p>
               </div>
-            </div>
+            </Link>
           </div>
           
           <div className="reveal-left">
-            <div className={cardClasses}>
+            <Link href="https://www.instagram.com/keephustling4473_?igsh=Yno2Zm5qajMxc2Mx" target="_blank" className={cardClasses}>
               <div className="aspect-[4/3] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Studio NORD" />
+                <img className="parallax-image w-full h-full object-cover" src="/creators/keephustling4473_.jpg" alt="@keephustling4473_" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
-                  <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Studio NORD</p>
+                  <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">@keephustling4473_</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Collective</p>
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -189,239 +190,211 @@ export default function Creators() {
             {/* Col 2 (Left) */}
             <div className="w-1/2 flex flex-col gap-16">
               <div className="reveal-left">
-                <div className={cardClasses}>
+                <Link href="https://www.instagram.com/keephustling4473s?igsh=czcxdmYxcm9jdHFq" target="_blank" className={cardClasses}>
                   <div className="aspect-square bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Julian Moss" />
+                    <img className="parallax-image w-full h-full object-cover" src="/creators/keephustling4473s.jpg" alt="@keephustling4473s" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
-                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Julian Moss</p>
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">@keephustling4473s</p>
                     </div>
                     <div className="overflow-hidden">
-                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Space</p>
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
               
               <div className="reveal-left">
-                <div className={cardClasses}>
+                <Link href="https://www.instagram.com/traveller_abhii?igsh=Nm1tdWJzMzEzZXh4" target="_blank" className={cardClasses}>
                   <div className="aspect-[3/5] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Anya Volkov" />
+                    <img className="parallax-image w-full h-full object-cover" src="/creators/traveller_abhii.jpg" alt="@traveller_abhii" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
-                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Anya Volkov</p>
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">@traveller_abhii</p>
                     </div>
                     <div className="overflow-hidden">
-                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Identity</p>
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
             
             {/* Col 3 (Right) */}
             <div className="w-1/2 flex flex-col gap-16 pt-12">
               <div className="reveal-right">
-                <div className={cardClasses}>
+                <Link href="https://www.instagram.com/succeedwithsarthak?igsh=dGdrb2dhZnJlNXls" target="_blank" className={cardClasses}>
                   <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80" alt="Sophia Chen" />
+                    <img className="parallax-image w-full h-full object-cover" src="/creators/succeedwithsarthak.jpg" alt="@succeedwithsarthak" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
-                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Sophia Chen</p>
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">@succeedwithsarthak</p>
                     </div>
                     <div className="overflow-hidden">
-                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Direction</p>
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
               
               <div className="reveal-right">
-                <div className={cardClasses}>
+                <Link href="https://www.instagram.com/major_rudrashish?igsh=MWU1ZGtzZHg0a21sZg==" target="_blank" className={cardClasses}>
                   <div className="aspect-square bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                    <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="David K." />
+                    <img className="parallax-image w-full h-full object-cover" src="/creators/major_rudrashish.jpg" alt="@major_rudrashish" />
                   </div>
                   <div className="text-center">
                     <div className="overflow-hidden pb-1">
-                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">David K.</p>
+                      <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">@major_rudrashish</p>
                     </div>
                     <div className="overflow-hidden">
-                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Textile</p>
+                      <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
           
-          {/* Isabella Frost (Up) */}
+          {/* With Reet (Up) */}
           <div className="reveal-up relative flex flex-col mt-4">
-            <div className={cardClasses}>
+            <Link href="https://www.instagram.com/withreeeet?igsh=MWozdmtwdWpueHJ4Mg==" target="_blank" className={cardClasses}>
               <div className="absolute -bottom-8 -left-8 w-20 h-20 lg:w-24 lg:h-24 rounded-full border-4 border-surface dark:border-[#1A1A1A] shadow-xl overflow-hidden z-20 bg-surface-container dark:bg-[#1E1E1E]">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1531123897727-8f129e1bf329?auto=format&fit=crop&w=200&q=80" alt="Isabella Avatar" />
+                <img className="parallax-image w-full h-full object-cover" src="/creators/withreeeet.jpg" alt="@withreeeet Avatar" />
               </div>
               <div className="aspect-[16/9] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-5">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Isabella Frost" />
+                <img className="parallax-image w-full h-full object-cover" src="/creators/withreeeet.jpg" alt="@withreeeet" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
-                  <p className="creator-name font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">Isabella Frost</p>
+                  <p className="creator-name font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">@withreeeet</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Experience</p>
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
         {/* Col 4 (Right) */}
         <div className="w-[32%] flex flex-col gap-12 relative">
           <div className="reveal-right">
-            <div className={cardClasses}>
+            <Link href="https://www.instagram.com/shwetas_talkies?igsh=MWltN3h1YjE5cGRkaQ==" target="_blank" className={cardClasses}>
               <div className="aspect-[4/3] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Marcus Thorne" />
+                <img className="parallax-image w-full h-full object-cover" src="/creators/shwetas_talkies.jpg" alt="@shwetas_talkies" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
-                  <p className="creator-name font-serif text-lg lg:text-xl text-on-surface dark:text-[#EDEDED]">Marcus Thorne</p>
+                  <p className="creator-name font-serif text-lg lg:text-xl text-on-surface dark:text-[#EDEDED]">@shwetas_talkies</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Curation</p>
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
           
           <div className="reveal-right">
-            <div className={cardClasses}>
+            <Link href="https://www.instagram.com/unfitofit_official_?igsh=Z2xsNWU1cjhuYzcx" target="_blank" className={cardClasses}>
               <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4 relative z-10">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=400&q=80" alt="Clara Mendes" />
+                <img className="parallax-image w-full h-full object-cover" src="/creators/unfitofit_official_.jpg" alt="@unfitofit_official_" />
               </div>
               <div className="text-center">
                 <div className="overflow-hidden pb-1">
-                  <p className="creator-name font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">Clara Mendes</p>
+                  <p className="creator-name font-serif text-xl lg:text-2xl text-on-surface dark:text-[#EDEDED]">@unfitofit_official_</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Photography</p>
+                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Creator</p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="reveal-right">
-            <div className={`${cardClasses} w-2/3 mx-auto`}>
-              <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm hover:shadow-2xl transition-shadow duration-[800ms] mb-4">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Erik S." />
-              </div>
-              <div className="text-center">
-                <div className="overflow-hidden pb-1">
-                  <p className="creator-name font-serif text-base lg:text-lg text-on-surface dark:text-[#EDEDED]">Erik S.</p>
-                </div>
-                <div className="overflow-hidden">
-                  <p className="creator-role text-[9px] lg:text-[10px] font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-1">Sonic</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Leo H (Avatar) (Right) */}
-          <div className="reveal-right absolute -right-12 lg:-right-16 top-[60%] flex flex-col items-center">
-            <div className={avatarCardClasses}>
-              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-2 border-primary dark:border-[#1E1E1E] overflow-hidden mb-2 shadow-sm bg-surface-container dark:bg-[#1E1E1E]">
-                <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80" alt="Leo H." />
-              </div>
-              <div className="overflow-hidden">
-                <p className="creator-name text-[10px] font-semibold tracking-widest text-on-surface dark:text-[#EDEDED]">Leo H.</p>
-              </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Mobile Stack (Visible only on small screens) */}
-      <div className="group md:hidden flex flex-col gap-16 relative z-10">
+      <div className="group md:hidden flex flex-col gap-16 relative z-10 mt-16">
         <div className="reveal-left">
-          <div className={cardClasses}>
+          <Link href="https://www.instagram.com/keephustling4473s?igsh=czcxdmYxcm9jdHFq" target="_blank" className={cardClasses}>
             <div className="aspect-square bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4 relative">
-              <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Julian Moss" />
+              <img className="parallax-image w-full h-full object-cover" src="/creators/keephustling4473s.jpg" alt="@keephustling4473s" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
-                <p className="creator-name font-serif text-xl text-on-surface dark:text-[#EDEDED]">Julian Moss</p>
+                <p className="creator-name font-serif text-xl text-on-surface dark:text-[#EDEDED]">@keephustling4473s</p>
               </div>
               <div className="overflow-hidden">
-                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Space</p>
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Creator</p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
         
         <div className="reveal-right">
-          <div className={cardClasses}>
+          <Link href="https://www.instagram.com/succeedwithsarthak?igsh=dGdrb2dhZnJlNXls" target="_blank" className={cardClasses}>
             <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80" alt="Sophia Chen" />
+              <img className="parallax-image w-full h-full object-cover" src="/creators/succeedwithsarthak.jpg" alt="@succeedwithsarthak" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
-                <p className="creator-name font-serif text-xl text-on-surface dark:text-[#EDEDED]">Sophia Chen</p>
+                <p className="creator-name font-serif text-xl text-on-surface dark:text-[#EDEDED]">@succeedwithsarthak</p>
               </div>
               <div className="overflow-hidden">
-                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Direction</p>
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Creator</p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
         
         <div className="reveal-left">
-          <div className={cardClasses}>
+          <Link href="https://www.instagram.com/shwetas_talkies?igsh=MWltN3h1YjE5cGRkaQ==" target="_blank" className={cardClasses}>
             <div className="aspect-[4/3] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Marcus Thorne" />
+              <img className="parallax-image w-full h-full object-cover" src="/creators/shwetas_talkies.jpg" alt="@shwetas_talkies" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
-                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Marcus Thorne</p>
+                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">@shwetas_talkies</p>
               </div>
               <div className="overflow-hidden">
-                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Curation</p>
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Creator</p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
         
         <div className="reveal-right">
-          <div className={cardClasses}>
+          <Link href="https://www.instagram.com/unfitofit_official_?igsh=Z2xsNWU1cjhuYzcx" target="_blank" className={cardClasses}>
             <div className="aspect-[3/4] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=400&q=80" alt="Clara Mendes" />
+              <img className="parallax-image w-full h-full object-cover" src="/creators/unfitofit_official_.jpg" alt="@unfitofit_official_" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
-                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Clara Mendes</p>
+                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">@unfitofit_official_</p>
               </div>
               <div className="overflow-hidden">
-                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Photography</p>
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Creator</p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
         
         <div className="reveal-up relative">
-          <div className={cardClasses}>
+          <Link href="https://www.instagram.com/withreeeet?igsh=MWozdmtwdWpueHJ4Mg==" target="_blank" className={cardClasses}>
             <div className="aspect-[16/9] bg-surface-container dark:bg-[#1E1E1E] overflow-hidden rounded-xl shadow-sm mb-4">
-              <img className="parallax-image w-full h-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Isabella Frost" />
+              <img className="parallax-image w-full h-full object-cover" src="/creators/withreeeet.jpg" alt="@withreeeet" />
             </div>
             <div className="text-center">
               <div className="overflow-hidden pb-1">
-                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">Isabella Frost</p>
+                <p className="creator-name font-serif text-2xl text-on-surface dark:text-[#EDEDED]">@withreeeet</p>
               </div>
               <div className="overflow-hidden">
-                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Experience</p>
+                <p className="creator-role text-xs font-semibold text-on-surface-variant dark:text-[#A0A0A0] tracking-[0.2em] uppercase mt-2">Creator</p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
