@@ -35,7 +35,7 @@ export default function FounderStory() {
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-2xl bg-surface-dim dark:bg-[#1E1E1E]">
               <Image 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+                src="/founder/Raunak.jpeg"
                 alt="Raunak Kr Shail"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
