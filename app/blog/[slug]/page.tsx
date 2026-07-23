@@ -7,12 +7,17 @@ import { prisma } from '@/lib/prisma'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await prisma.post.findUnique({
-    where: { slug: params.slug }
-  })
+  let post = null;
+  try {
+    post = await prisma.post.findUnique({
+      where: { slug: params.slug }
+    });
+  } catch (error) {
+    console.error('Database connection error:', error);
+  }
 
   if (!post) {
     notFound()
