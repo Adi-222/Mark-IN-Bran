@@ -24,9 +24,9 @@ export default function FounderStory() {
     <section className="bg-surface dark:bg-[#0F0F0F] py-16 md:py-32" id="founder">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
-          
+
           {/* Image Side - Sticky on desktop */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.3 }}
@@ -34,7 +34,7 @@ export default function FounderStory() {
             className="lg:col-span-5 lg:sticky lg:top-32 relative"
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden relative shadow-2xl bg-surface-dim dark:bg-[#1E1E1E]">
-              <Image 
+              <Image
                 src="/founder/Raunak.jpeg"
                 alt="Raunak Kr Shail"
                 fill
@@ -58,8 +58,8 @@ export default function FounderStory() {
             <h2 className="text-3xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED] mb-8 leading-tight">
               Understanding people before understanding markets.
             </h2>
-            
-            <motion.div 
+
+            <motion.div
               ref={ref}
               variants={containerVariants}
               initial="hidden"
@@ -134,7 +134,7 @@ export default function FounderStory() {
                   We believe every successful brand stands on four pillars: <strong>Technology</strong> to create scalable systems, <strong>Business Strategy</strong> to build sustainable growth, <strong>Marketing</strong> to generate attention, and <strong>Branding</strong> to create trust and lasting memories.
                 </p>
                 <p>
-                  When these four work together, businesses stop competing on price and start competing on perception. 
+                  When these four work together, businesses stop competing on price and start competing on perception.
                 </p>
                 <p className="font-semibold text-primary mt-6 text-xl md:text-2xl leading-snug">
                   We don&apos;t just create marketing campaigns. We engineer growth, build trust, and create brands people remember.
@@ -143,7 +143,7 @@ export default function FounderStory() {
 
             </motion.div>
           </div>
-          
+
         </div>
       </div>
     </section>
