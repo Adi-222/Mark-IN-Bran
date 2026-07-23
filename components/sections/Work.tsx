@@ -91,119 +91,156 @@ export default function Work() {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start mt-10">
         
-        {/* Case Study 1 - Left (Estate Coffee) */}
-        <motion.div
+        {/* Case Study 1 (Samosa King) */}
+        <motion.a
+          href="https://samosakingbelfast.com/samosa-king"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={leftCardVariants}
           initial="hidden"
           animate={left1InView ? "visible" : "hidden"}
           ref={left1Ref}
-          className="md:col-span-7 group cursor-default"
+          className="group block cursor-pointer w-full"
         >
-          <div className="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+            {/* Background Glows */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxj47TRJScMDtoIUoNFmqDQb-iT3j-Rpm9_E6UMAiFfjaMgaqHGggzKch0XJoWorur5BzRgCxqlbvtNl7jSkOLWodB7hqSdJp_Ek4wjLuoLLhu-F8DbMRZZbTbJHBk-nh20Yw7k5wnSSJgtFAacHr770o8yCCd_chm45vQdEUcZDMQZd2N5Ciw5dtQ6y_aAmfvrHOmYci9L-alASs_LpWLMNsPq0xiX6IReuNQKGRoTulzEyDAlNzWW1MPfFOhfnGRb6xPWQy-Cp0"
-              alt="Estate Coffee Roasters"
+              src="/worklogo/samosaking.jpeg"
+              alt="Samosa King"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-1000 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain p-12 md:p-16 transition-transform duration-1000 group-hover:scale-110 drop-shadow-2xl z-10 relative"
             />
           </div>
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-end px-4">
             <div>
               <div className="overflow-hidden pb-1">
-                <motion.h3 variants={textMaskVariant} className="text-2xl font-serif font-medium dark:text-[#EDEDED]">Estate Coffee Roasters</motion.h3>
+                <motion.h3 variants={textMaskVariant} className="text-3xl font-serif font-medium dark:text-white group-hover:text-blue-400 transition-colors duration-500">Samosa King</motion.h3>
               </div>
-              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">E-commerce & Brand Experience</motion.p>
+              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Restaurant Branding & Web Experience</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+              <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
+              <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
+            </div>
           </div>
-        </motion.div>
+        </motion.a>
 
-        {/* Case Study 2 - Right (Luna) */}
-        <motion.div
+        {/* Case Study 2 (Mantraksha) - Staggered Down */}
+        <motion.a
+          href="https://mantraksha.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={rightCardVariants}
           initial="hidden"
           animate={right2InView ? "visible" : "hidden"}
           ref={right2Ref}
-          className="md:col-span-5 md:mt-32 group cursor-default"
+          className="group block cursor-pointer w-full md:mt-24"
         >
-          <div className="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsiIwBg9Dm_kE2sOSMrJQqOheS7nkVOkJIfyS8n283EiTrjfqWVDQygB2Pllrx9tOubqL9cVUyKdXI642VAFa8XCrKJjZ-j8Yj-eKAbQXefSfcigfg2yiu0wFG7hZP4LanjpVGuFvQioHvZXWtbatV_DbiqLO8BGSfo7PFSzTd1g7fjdDs2Jw5HoPttL96lQ2E8oTmqvZscBY0V_WR7SgE-qv9-UZTKiVD1Hhw5aQBc_wsgCdk705ZcZvCHSiyszEpZia6yk9X0bk"
-              alt="Luna Aesthetics"
+              src="/worklogo/Mantarakhsa.PNG"
+              alt="Mantraksha"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-1000 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain p-12 md:p-16 transition-transform duration-1000 group-hover:scale-110 drop-shadow-2xl z-10 relative"
             />
           </div>
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-end px-4">
             <div>
               <div className="overflow-hidden pb-1">
-                <motion.h3 variants={textMaskVariant} className="text-2xl font-serif font-medium dark:text-[#EDEDED]">Luna Aesthetics</motion.h3>
+                <motion.h3 variants={textMaskVariant} className="text-3xl font-serif font-medium dark:text-white group-hover:text-blue-400 transition-colors duration-500">Mantraksha</motion.h3>
               </div>
-              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">Booking Platform & Visual Identity</motion.p>
+              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Digital Platform & E-Commerce</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+              <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
+              <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
+            </div>
           </div>
-        </motion.div>
+        </motion.a>
 
-        {/* Case Study 3 - Left (Summit) */}
-        <motion.div
+        {/* Case Study 3 (Propvestors) */}
+        <motion.a
+          href="https://www.propvestors.in/"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={leftCardVariants}
           initial="hidden"
           animate={left3InView ? "visible" : "hidden"}
           ref={left3Ref}
-          className="md:col-span-5 group cursor-default"
+          className="group block cursor-pointer w-full"
         >
-          <div className="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUdjeyvsnQZ6nUuSR1abOsnNwfA9nhSx4PBGIXRrWpCFS_2lYeAGg-TMdHhcpdW_f6hyB3YASzX61IZv9K8lZIB9TB9iI8FrOdRcSVp6heGcPtBCok2tAgMHg0P9Io5zTkBLc88L0er9p0APmBGhGyfuWPLhG8FyvSmROyKhytpjHhujQOlPA8BhWZTc1WUXgKJhiyehaFgTqeWZRV0m5Lmz-wSUfGyEm0LLj75qPw1CBykwHk9soLwz5Lt-apNiLoDs6aYrlKlrU"
-              alt="Summit Dental"
+              src="/worklogo/PV Logo v2-05.png"
+              alt="Propvestors"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-1000 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain p-12 md:p-16 transition-transform duration-1000 group-hover:scale-110 drop-shadow-2xl z-10 relative"
             />
           </div>
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-end px-4">
             <div>
               <div className="overflow-hidden pb-1">
-                <motion.h3 variants={textMaskVariant} className="text-2xl font-serif font-medium dark:text-[#EDEDED]">Summit Dental</motion.h3>
+                <motion.h3 variants={textMaskVariant} className="text-3xl font-serif font-medium dark:text-white group-hover:text-blue-400 transition-colors duration-500">Propvestors</motion.h3>
               </div>
-              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">Patient Portal & SEO Strategy</motion.p>
+              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Real Estate Tech & SEO Strategy</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+              <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
+              <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
+            </div>
           </div>
-        </motion.div>
+        </motion.a>
 
-        {/* Case Study 4 - Right (Maison) */}
-        <motion.div
+        {/* Case Study 4 (Trustopay) - Staggered Down */}
+        <motion.a
+          href="https://trustopay.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={rightCardVariants}
           initial="hidden"
           animate={right4InView ? "visible" : "hidden"}
           ref={right4Ref}
-          className="md:col-span-7 md:-mt-32 group cursor-default"
+          className="group block cursor-pointer w-full md:mt-24"
         >
-          <div className="relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-dim dark:bg-[#1E1E1E] mb-6 dark:border dark:border-white/8">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6-mlMWJuRAJNo2_1F9FD7FQoLRxN5K1s7kuLTd9sIQin9qnpDGCWCKw0_dfGZ92v0MqcsTI0x7k7Xi95EUSVF0d2h260vJr3Q3jvrB5ZXVhfkhP90utwzuxs9LgUsrBrtIuQmyBGH9Nvd84aX4Jf9aeQCq3_YHSYv0YNeLEJy2yYj_EO7umv4suYCBqn8ZB_EywcepeAfxxpiiQOp7m2ICxJ4TcBcBD6NVpezLsIeRc4SudxMEj3y53dOeJzpbxKn3GId5evqSns"
-              alt="Maison Bistro"
+              src="/worklogo/Trustopay.WEBP"
+              alt="Trustopay"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-1000 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain p-12 md:p-16 transition-transform duration-1000 group-hover:scale-110 drop-shadow-2xl z-10 relative"
             />
           </div>
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-end px-4">
             <div>
               <div className="overflow-hidden pb-1">
-                <motion.h3 variants={textMaskVariant} className="text-2xl font-serif font-medium dark:text-[#EDEDED]">Maison Bistro</motion.h3>
+                <motion.h3 variants={textMaskVariant} className="text-3xl font-serif font-medium dark:text-white group-hover:text-blue-400 transition-colors duration-500">Trustopay</motion.h3>
               </div>
-              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#A0A0A0]">Reservation System & Art Direction</motion.p>
+              <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Fintech Platform & Trust Infrastructure</motion.p>
             </div>
-            <motion.span variants={fadeUpVariant} className="material-symbols-outlined bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:translate-x-1 transition-transform">arrow_forward</motion.span>
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+              <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
+              <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
+            </div>
           </div>
-        </motion.div>
+        </motion.a>
 
       </div>
     </section>

@@ -41,7 +41,7 @@ export default function Footer() {
             <h4 className="font-bold uppercase tracking-widest text-xs opacity-70">Resources</h4>
             <ul className="space-y-2 text-on-surface-variant dark:text-[#A0A0A0]">
               <li><Link className="hover:text-primary transition-colors" href="/#journal">Growth Journal</Link></li>
-              <li><Link className="hover:text-primary transition-colors" href="#">Community</Link></li>
+              <li><a className="hover:text-primary transition-colors" href="https://whatsapp.com/channel/0029VbE5sABFy728cK2g8T02" target="_blank" rel="noopener noreferrer">Community</a></li>
             </ul>
           </div>
           <div className="space-y-4">

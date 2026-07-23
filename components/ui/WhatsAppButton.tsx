@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   // Replace this with your actual WhatsApp Business number (including country code, no + or spaces)
   // For example: 1234567890
-  const whatsappNumber = "918910928606"
+  const whatsappNumber = "919007577575"
   const message = "Hi! I would like to know more about Mark In Bran's services."
   // Force cache break
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}&source=website`
