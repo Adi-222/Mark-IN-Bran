@@ -23,20 +23,20 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <Navbar />
       <main className="pt-32 pb-24 min-h-screen px-4 md:px-6">
         <article className="max-w-3xl mx-auto">
-          <Link href="/blog" className="inline-flex items-center text-primary mb-8 hover:underline underline-offset-4">
+          <Link href="/blog" className="inline-flex items-center text-primary mb-8 hover:opacity-80 transition-opacity font-medium tracking-wide uppercase text-xs">
             <span className="material-symbols-outlined mr-2 text-sm">arrow_back</span>
             Back to Blog
           </Link>
           
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-display font-medium mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-8 leading-tight text-on-surface dark:text-[#EDEDED]">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-on-surface-variant">
+            <div className="flex items-center gap-4 text-on-surface-variant dark:text-[#A0A0A0] font-medium tracking-wide text-sm uppercase">
               {post.author && (
                 <div className="flex items-center">
-                  <span className="font-medium mr-2">By {post.author}</span>
-                  <span className="w-1 h-1 rounded-full bg-on-surface-variant/50 mr-2"></span>
+                  <span className="mr-2">By {post.author}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                 </div>
               )}
               <time>
@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </header>
 
           {post.mainImage && (
-            <div className="relative w-full h-[300px] md:h-[500px] mb-12 rounded-2xl overflow-hidden bg-surface-variant">
+            <div className="relative w-full h-[300px] md:h-[500px] mb-16 rounded-3xl overflow-hidden bg-surface-variant dark:bg-[#1A1A1A] shadow-2xl border border-outline-variant/10 dark:border-white/5">
               <Image
                 src={post.mainImage}
                 alt={post.title}
@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             </div>
           )}
 
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-headings:font-medium prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-2xl prose-p:leading-relaxed prose-p:text-on-surface/90 dark:prose-p:text-[#C8C8C8]">
             {post.content ? (
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {post.content}

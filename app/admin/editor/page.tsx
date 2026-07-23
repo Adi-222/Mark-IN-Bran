@@ -56,64 +56,64 @@ export default function AdminEditor() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
         
         {/* Editor Form */}
-        <div className="w-full lg:w-1/2 bg-surface-container border border-outline-variant/20 rounded-2xl p-6 shadow-sm">
-          <h1 className="text-3xl font-display font-medium text-on-surface mb-8">Write a Post</h1>
+        <div className="w-full lg:w-1/2 bg-surface-container/50 dark:bg-[#151515] border border-outline-variant/20 dark:border-white/5 rounded-3xl p-8 shadow-lg">
+          <h1 className="text-3xl font-serif font-medium text-on-surface dark:text-[#EDEDED] mb-8">Write a Post</h1>
           
           <form onSubmit={handleSave} className="flex flex-col gap-5">
             <div>
-              <label className="text-sm font-medium text-on-surface-variant mb-2 block">Title</label>
+              <label className="text-sm font-medium text-on-surface-variant dark:text-[#A0A0A0] mb-2 block">Title</label>
               <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 onBlur={handleSlugify}
-                className="w-full px-4 py-3 rounded-xl bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface"
+                className="w-full px-4 py-3 rounded-xl bg-surface dark:bg-[#1E1E1E] border border-outline-variant/50 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface dark:text-[#EDEDED] transition-all"
                 placeholder="Post title"
                 required
               />
             </div>
 
             <div>
-              <label className="text-sm font-medium text-on-surface-variant mb-2 block">Slug (URL)</label>
+              <label className="text-sm font-medium text-on-surface-variant dark:text-[#A0A0A0] mb-2 block">Slug (URL)</label>
               <input
                 type="text"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface"
+                className="w-full px-4 py-3 rounded-xl bg-surface dark:bg-[#1E1E1E] border border-outline-variant/50 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface dark:text-[#EDEDED] transition-all"
                 placeholder="post-url-slug"
                 required
               />
             </div>
 
             <div>
-              <label className="text-sm font-medium text-on-surface-variant mb-2 block">Image URL (Optional)</label>
+              <label className="text-sm font-medium text-on-surface-variant dark:text-[#A0A0A0] mb-2 block">Image URL (Optional)</label>
               <input
                 type="url"
                 value={mainImage}
                 onChange={(e) => setMainImage(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface"
+                className="w-full px-4 py-3 rounded-xl bg-surface dark:bg-[#1E1E1E] border border-outline-variant/50 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface dark:text-[#EDEDED] transition-all"
                 placeholder="https://..."
               />
-              <p className="text-xs text-on-surface-variant mt-2">Since you are using a raw MySQL database, you must paste a direct image URL here instead of uploading files.</p>
+              <p className="text-xs text-on-surface-variant dark:text-[#888888] mt-2">Since you are using a raw MySQL database, you must paste a direct image URL here instead of uploading files.</p>
             </div>
 
             <div>
-              <label className="text-sm font-medium text-on-surface-variant mb-2 block">Excerpt</label>
+              <label className="text-sm font-medium text-on-surface-variant dark:text-[#A0A0A0] mb-2 block">Excerpt</label>
               <textarea
                 value={excerpt}
                 onChange={(e) => setExcerpt(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface h-20 resize-y"
+                className="w-full px-4 py-3 rounded-xl bg-surface dark:bg-[#1E1E1E] border border-outline-variant/50 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface dark:text-[#EDEDED] transition-all h-24 resize-y"
                 placeholder="Short summary for the blog list page..."
                 required
               />
             </div>
 
             <div className="flex-grow flex flex-col">
-              <label className="text-sm font-medium text-on-surface-variant mb-2 block">Content (Markdown)</label>
+              <label className="text-sm font-medium text-on-surface-variant dark:text-[#A0A0A0] mb-2 block">Content (Markdown)</label>
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface min-h-[400px] resize-y font-mono text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-surface dark:bg-[#1E1E1E] border border-outline-variant/50 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface dark:text-[#EDEDED] transition-all min-h-[400px] resize-y font-mono text-sm"
                 placeholder="Write your markdown here..."
                 required
               />
@@ -133,9 +133,9 @@ export default function AdminEditor() {
         </div>
 
         {/* Live Preview */}
-        <div className="w-full lg:w-1/2 bg-surface-container border border-outline-variant/20 rounded-2xl p-6 shadow-sm overflow-hidden flex flex-col">
-          <h2 className="text-xl font-display font-medium text-on-surface mb-6 border-b border-outline-variant/20 pb-4">Live Preview</h2>
-          <div className="prose prose-lg dark:prose-invert max-w-none overflow-y-auto flex-grow pr-4">
+        <div className="w-full lg:w-1/2 bg-surface-container/50 dark:bg-[#151515] border border-outline-variant/20 dark:border-white/5 rounded-3xl p-8 shadow-lg overflow-hidden flex flex-col">
+          <h2 className="text-xl font-serif font-medium text-on-surface dark:text-[#EDEDED] mb-6 border-b border-outline-variant/20 dark:border-white/10 pb-4">Live Preview</h2>
+          <div className="prose prose-lg dark:prose-invert max-w-none overflow-y-auto flex-grow pr-4 prose-headings:font-serif prose-headings:font-medium">
             {title && <h1>{title}</h1>}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             {mainImage && <img src={mainImage} alt="Cover" className="w-full rounded-xl object-cover h-[300px]" />}
