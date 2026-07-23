@@ -38,6 +38,7 @@ export default function Navbar() {
           <Link className="text-[15px] font-medium text-on-surface-variant dark:text-[#A0A0A0] hover:text-blue-500 dark:hover:text-blue-400 transition-colors" href="/#about">About</Link>
           <Link className="text-[15px] font-medium text-on-surface-variant dark:text-[#A0A0A0] hover:text-blue-500 dark:hover:text-blue-400 transition-colors" href="/#work">Work</Link>
           <Link className="text-[15px] font-medium text-on-surface-variant dark:text-[#A0A0A0] hover:text-blue-500 dark:hover:text-blue-400 transition-colors" href="/#creators">Creators</Link>
+          <Link className="text-[15px] font-medium text-on-surface-variant dark:text-[#A0A0A0] hover:text-blue-500 dark:hover:text-blue-400 transition-colors" href="/blog">Blog</Link>
         </div>
         
         {/* Right Side: CTA & Actions */}
