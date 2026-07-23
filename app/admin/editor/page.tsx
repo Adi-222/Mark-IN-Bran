@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -14,7 +14,6 @@ export default function AdminEditor() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
-  const router = useRouter()
 
   const handleSlugify = () => {
     setSlug(title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
@@ -45,7 +44,7 @@ export default function AdminEditor() {
         const data = await res.json()
         setError(data.error || 'Failed to save post')
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)
@@ -138,6 +137,7 @@ export default function AdminEditor() {
           <h2 className="text-xl font-display font-medium text-on-surface mb-6 border-b border-outline-variant/20 pb-4">Live Preview</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none overflow-y-auto flex-grow pr-4">
             {title && <h1>{title}</h1>}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             {mainImage && <img src={mainImage} alt="Cover" className="w-full rounded-xl object-cover h-[300px]" />}
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {content || '*Start writing to see preview...*'}

@@ -26,7 +26,7 @@ export default function AdminLogin() {
       } else {
         setError('Invalid password')
       }
-    } catch (err) {
+    } catch {
       setError('Something went wrong')
     } finally {
       setLoading(false)

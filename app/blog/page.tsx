@@ -7,10 +7,15 @@ import { prisma } from '@/lib/prisma'
 export const revalidate = 60
 
 export default async function BlogPage() {
-  const posts = await prisma.post.findMany({
-    where: { published: true },
-    orderBy: { createdAt: 'desc' }
-  })
+  let posts: any[] = []
+  try {
+    posts = await prisma.post.findMany({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' }
+    })
+  } catch (error) {
+    console.error('Prisma error during build:', error)
+  }
 
   return (
     <>
@@ -24,7 +29,7 @@ export default async function BlogPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
-                <Link key={post.id} href={`/blog/${post.slug}`} className="group flex flex-col block border border-outline-variant/30 rounded-2xl overflow-hidden hover:border-primary/50 transition-colors bg-surface-container/30">
+                <Link key={post.id} href={`/blog/${post.slug}`} className="group flex flex-col border border-outline-variant/30 rounded-2xl overflow-hidden hover:border-primary/50 transition-colors bg-surface-container/30">
                   {post.mainImage ? (
                     <div className="relative h-48 w-full overflow-hidden bg-surface-variant">
                       <Image
