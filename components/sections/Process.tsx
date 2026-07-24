@@ -4,14 +4,7 @@ import { useState, useEffect } from 'react'
 import ScrollReveal from '../ui/ScrollReveal'
 
 export default function Process() {
-  const [loopKey, setLoopKey] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoopKey(prev => prev + 1)
-    }, 6000) // Restart animation every 6 seconds
-    return () => clearInterval(interval)
-  }, [])
+  // Removed looping animation interval to significantly improve performance on mobile
 
   const steps = [
     { num: '01', icon: 'explore', title: 'Discovery', desc: 'Understanding your vision, goals, and the legacy you want to build.' },
@@ -24,8 +17,8 @@ export default function Process() {
   ]
 
   const typeLetterVariants = {
-    hidden: { opacity: 0.25, filter: "blur(2px)" },
-    visible: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.3 } }
+    hidden: { opacity: 0, y: 5 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
   }
 
   const getContainerVariants = (delay: number) => ({
@@ -72,11 +65,11 @@ export default function Process() {
             </div>
             <div className="max-w-md lg:pb-4">
               <motion.p 
-                key={`paragraph-${loopKey}`}
                 className="text-blue-600 dark:text-blue-400 text-lg md:text-xl font-light leading-relaxed"
                 initial="hidden"
-                animate="visible"
-                variants={getContainerVariants(1.2)}
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={getContainerVariants(0.4)}
               >
                 {renderText("At Mark In Bran, we don't just create marketing campaigns.", false, true)}<br className="hidden md:block" />
                 {renderText("We engineer growth, build trust, and create brands people remember.", false, true)}

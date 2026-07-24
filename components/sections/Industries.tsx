@@ -141,7 +141,7 @@ function IndustryPill({ text, index }: { text: string; index: number }) {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!ref.current) return
+      if (!ref.current || window.innerWidth < 768) return // Disable expensive scatter calculations on mobile devices
       
       const rect = ref.current.getBoundingClientRect()
       const centerX = rect.left + rect.width / 2
@@ -208,7 +208,7 @@ function IndustryPill({ text, index }: { text: string; index: number }) {
             <motion.div
               ref={ref}
               whileHover={{ scale: 1.15 }}
-              className="px-4 py-2 md:px-8 md:py-4 rounded-full border border-outline-variant/30 dark:border-white/10 bg-white/50 dark:bg-[#1A1A1A]/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-400 transition-colors cursor-pointer text-on-surface-variant dark:text-[#A0A0A0] font-medium text-sm md:text-xl tracking-wide select-none whitespace-nowrap"
+              className="px-4 py-2 md:px-8 md:py-4 rounded-full border border-outline-variant/30 dark:border-white/10 bg-white/50 dark:bg-[#1A1A1A]/80 md:backdrop-blur-md shadow-lg hover:shadow-xl hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-400 transition-colors cursor-pointer text-on-surface-variant dark:text-[#A0A0A0] font-medium text-sm md:text-xl tracking-wide select-none whitespace-nowrap"
             >
             {text}
           </motion.div>
