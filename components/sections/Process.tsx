@@ -1,6 +1,5 @@
 'use client'
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
 import ScrollReveal from '../ui/ScrollReveal'
 
 export default function Process() {

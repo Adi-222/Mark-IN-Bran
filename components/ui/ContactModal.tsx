@@ -27,33 +27,21 @@ export default function ContactModal() {
 
     const formData = new FormData(e.currentTarget)
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      details: formData.get('details'),
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      details: formData.get('details') as string,
     }
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+    // Redirect to email client
+    const subject = encodeURIComponent(`New Project Request from ${data.name}`)
+    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nProject Details:\n${data.details}`)
+    window.location.href = `mailto:brand@markinbran.in?subject=${subject}&body=${body}`
 
-      if (response.ok) {
-        setStatus('success')
-        setTimeout(() => {
-          setStatus('idle')
-          onClose()
-        }, 3000)
-      } else {
-        setStatus('error')
-      }
-    } catch (error) {
-      console.error('Failed to submit form:', error)
-      setStatus('error')
-    }
+    setStatus('success')
+    setTimeout(() => {
+      setStatus('idle')
+      onClose()
+    }, 2000)
   }
 
   return (
