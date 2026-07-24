@@ -15,7 +15,7 @@ export default function Contact() {
           className="relative bg-surface-container-lowest dark:bg-[#111111] rounded-[2rem] md:rounded-[4rem] border border-outline-variant/10 dark:border-white/5 overflow-hidden shadow-2xl py-16 md:py-32 px-4 md:px-6 flex flex-col items-center justify-center text-center"
         >
           {/* Immersive Background Ambient Glow Inside the Box */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-blue-500/10 dark:bg-blue-500/15 rounded-full blur-[100px] md:blur-[140px] pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-blue-500/10 dark:bg-blue-500/15 rounded-full blur-2xl md:blur-[140px] pointer-events-none"></div>
           
           {/* Subtle grid pattern overlay for texture */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGgyNHYyNEgwem0xIDF2MjJoMjJWMXptMCAwaDIydjIySDF6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=')] opacity-30 dark:opacity-20 mix-blend-overlay pointer-events-none"></div>

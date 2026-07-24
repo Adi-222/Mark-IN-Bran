@@ -57,7 +57,7 @@ export default function WhyDifferent() {
               <motion.div 
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className={`bg-gradient-to-br ${item.color} backdrop-blur-2xl p-8 rounded-3xl border border-white/60 dark:border-white/10 shadow-[8px_8px_24px_rgba(0,0,0,0.04),-8px_-8px_24px_rgba(255,255,255,0.8)] dark:shadow-[8px_8px_24px_rgba(0,0,0,0.5),-8px_-8px_24px_rgba(255,255,255,0.02)] hover:shadow-[12px_12px_32px_rgba(0,0,0,0.08),-12px_-12px_32px_rgba(255,255,255,1)] dark:hover:shadow-[12px_12px_32px_rgba(0,0,0,0.7),-12px_-12px_32px_rgba(255,255,255,0.03)] h-full group cursor-pointer flex flex-col transition-all duration-500 relative`}
+                className={`bg-gradient-to-br ${item.color} backdrop-blur-sm md:backdrop-blur-2xl p-8 rounded-3xl border border-white/60 dark:border-white/10 shadow-[8px_8px_24px_rgba(0,0,0,0.04),-8px_-8px_24px_rgba(255,255,255,0.8)] dark:shadow-[8px_8px_24px_rgba(0,0,0,0.5),-8px_-8px_24px_rgba(255,255,255,0.02)] hover:shadow-[12px_12px_32px_rgba(0,0,0,0.08),-12px_-12px_32px_rgba(255,255,255,1)] dark:hover:shadow-[12px_12px_32px_rgba(0,0,0,0.7),-12px_-12px_32px_rgba(255,255,255,0.03)] h-full group cursor-pointer flex flex-col transition-all duration-500 relative`}
               >
                 {/* Neumorphic Inner Glow Layer */}
                 <div className="absolute inset-0 rounded-3xl shadow-[inset_2px_2px_4px_rgba(255,255,255,0.9),inset_-2px_-2px_4px_rgba(0,0,0,0.02)] dark:shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05),inset_-2px_-2px_4px_rgba(0,0,0,0.2)] pointer-events-none z-10"></div>

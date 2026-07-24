@@ -73,7 +73,7 @@ export default function Industries() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10" ref={containerRef}>
         
         {/* Glowing back blue gradient shadow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl h-[80%] bg-blue-500/20 dark:bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl h-[80%] bg-blue-500/20 dark:bg-blue-600/20 blur-[64px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
         <motion.div 
           initial={{ opacity: 0, y: 40 }}

@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <div className="fixed top-0 left-0 w-full z-50 flex justify-center px-4 pt-4 md:pt-6 pointer-events-none">
       <nav 
-        className={`pointer-events-auto transition-all duration-500 flex justify-between items-center relative bg-white/50 dark:bg-[#0A0A0A]/50 backdrop-blur-[48px] border border-white/60 dark:border-white/20 shadow-[0_16px_64px_rgba(0,0,0,0.1)] dark:shadow-[0_16px_64px_rgba(0,0,0,0.8)] rounded-full ${
+        className={`pointer-events-auto transition-all duration-500 flex justify-between items-center relative bg-white/50 dark:bg-[#0A0A0A]/50 backdrop-blur-xl md:backdrop-blur-[48px] border border-white/60 dark:border-white/20 shadow-[0_16px_64px_rgba(0,0,0,0.1)] dark:shadow-[0_16px_64px_rgba(0,0,0,0.8)] rounded-full ${
           scrolled 
             ? 'w-[92%] max-w-7xl py-3 px-6 md:px-8' 
             : 'w-[96%] max-w-[1500px] py-4 px-6 md:px-10'

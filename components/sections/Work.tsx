@@ -104,10 +104,10 @@ export default function Work() {
           ref={left1Ref}
           className="group block cursor-pointer w-full"
         >
-          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] md:dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
             {/* Background Glows */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 md:blur-2xl"></div>
             
             <Image
               src="/worklogo/samosaking.jpeg"
@@ -124,7 +124,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Restaurant Branding & Web Experience</motion.p>
             </div>
-            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden md:backdrop-blur-md">
               <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
               <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
             </div>
@@ -142,9 +142,9 @@ export default function Work() {
           ref={right2Ref}
           className="group block cursor-pointer w-full md:mt-24"
         >
-          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] md:dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 md:blur-2xl"></div>
             
             <Image
               src="/worklogo/Mantarakhsa.PNG"
@@ -161,7 +161,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Digital Platform & E-Commerce</motion.p>
             </div>
-            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden md:backdrop-blur-md">
               <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
               <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
             </div>
@@ -179,9 +179,9 @@ export default function Work() {
           ref={left3Ref}
           className="group block cursor-pointer w-full"
         >
-          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] md:dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 md:blur-2xl"></div>
             
             <Image
               src="/worklogo/PV Logo v2-05.png"
@@ -198,7 +198,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Real Estate Tech & SEO Strategy</motion.p>
             </div>
-            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden md:backdrop-blur-md">
               <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
               <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
             </div>
@@ -216,9 +216,9 @@ export default function Work() {
           ref={right4Ref}
           className="group block cursor-pointer w-full md:mt-24"
         >
-          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
+          <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] bg-[#0A0A0A] dark:bg-white/[0.08] md:dark:backdrop-blur-2xl mb-8 border border-transparent dark:border-white/10 group-hover:border-white/20 dark:group-hover:border-white/30 transition-all duration-700 shadow-2xl group-hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)]">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_50%)] group-hover:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,rgba(0,0,0,0)_50%)] transition-all duration-700 md:blur-2xl"></div>
             
             <Image
               src="/worklogo/Trustopay.WEBP"
@@ -235,7 +235,7 @@ export default function Work() {
               </div>
               <motion.p variants={fadeUpVariant} className="text-on-surface-variant dark:text-[#888888] mt-2 font-medium">Fintech Platform & Trust Infrastructure</motion.p>
             </div>
-            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden backdrop-blur-md">
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 relative overflow-hidden md:backdrop-blur-md">
               <span className="material-symbols-outlined text-white absolute -translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out">arrow_forward</span>
               <span className="material-symbols-outlined text-white/50 absolute group-hover:translate-x-10 group-hover:opacity-0 transition-all duration-500 ease-in">north_east</span>
             </div>
