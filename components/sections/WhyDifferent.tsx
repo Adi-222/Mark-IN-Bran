@@ -54,7 +54,7 @@ export default function WhyDifferent() {
         <ScrollReveal>
           <div className="mb-16 text-center space-y-4">
             <span className="text-xs font-bold tracking-[0.2em] bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent uppercase">What Makes Us Different</span>
-            <h2 className="text-3xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED]">Why Brands Choose Mark In Bran</h2>
+            <h2 className="text-3xl md:text-5xl font-serif font-medium text-on-surface dark:text-[#EDEDED]">Why Brands Choose Mark <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">In</span> Bran</h2>
           </div>
         </ScrollReveal>
         
