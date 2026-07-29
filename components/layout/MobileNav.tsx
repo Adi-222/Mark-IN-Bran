@@ -59,7 +59,7 @@ export default function MobileNav() {
                 </button>
               </nav>
               <div className="mt-auto pt-8 border-t border-outline-variant/10 dark:border-white/8">
-                <p className="text-xs text-on-surface-variant dark:text-[#A0A0A0]">Vibe-coded websites.</p>
+                <p className="text-xs text-on-surface-variant dark:text-[#A0A0A0]">Mark In Bran.</p>
               </div>
             </div>
           </motion.div>
