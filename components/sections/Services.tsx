@@ -99,6 +99,11 @@ export default function Services() {
       title: "Marketing, Branding & R&D",
       isDropdownMenu: false,
       items: ["Market Research", "Consumer Psychology", "Trend Forecasting", "Competitor Analysis", "Go-To-Market Strategy"]
+    },
+    {
+      title: "Website & App Development",
+      isDropdownMenu: false,
+      items: ["Custom Web Development", "Mobile App Development", "UI/UX & Prototyping", "E-Commerce Solutions", "Web App Architecture"]
     }
   ]
 

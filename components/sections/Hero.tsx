@@ -45,13 +45,13 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-on-background dark:text-[#EDEDED] leading-[1.1] md:leading-[1.1] tracking-tight flex flex-col items-center gap-y-1 md:gap-y-4 cursor-default"
         >
           <motion.div variants={getContainerVariants(0.1)} initial="hidden" animate="visible">
-            {renderText("We Don't Market Brands.")}
+            {renderText("We Build Brands")}
           </motion.div>
-          <motion.div variants={getContainerVariants(0.9)} initial="hidden" animate="visible">
-            {renderText("We Build Brands", true)}
+          <motion.div variants={getContainerVariants(0.9)} initial="hidden" animate="visible" className="flex items-center justify-center">
+            {renderText("People Remember.")}
           </motion.div>
           <motion.div variants={getContainerVariants(1.7)} initial="hidden" animate="visible" className="flex items-center justify-center">
-            {renderText("People Remember.")}
+            {renderText("Make It Feel.", true)}
           </motion.div>
         </motion.h1>
         <motion.p
@@ -65,7 +65,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3.0, duration: 0.6 }}
+          transition={{ delay: 3.4, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 px-4 w-full sm:w-auto"
         >
           <motion.button
