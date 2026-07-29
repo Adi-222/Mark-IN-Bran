@@ -38,6 +38,13 @@ export default function WhyDifferent() {
       icon: "handshake",
       color: "from-cyan-500/10 to-cyan-900/10 dark:from-[#081F26] dark:to-[#103E4C]",
       accent: "text-cyan-600 dark:text-cyan-400"
+    },
+    {
+      title: "Human Psychology & Strategy",
+      desc: "We leverage behavioral psychology and cognitive insights to craft marketing strategies that subconsciously drive consumer action and deep brand loyalty.",
+      icon: "psychology",
+      color: "from-rose-500/10 to-rose-900/10 dark:from-[#2A0F15] dark:to-[#4A1822]",
+      accent: "text-rose-600 dark:text-rose-400"
     }
   ]
 
