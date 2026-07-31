@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
-      <body className="bg-surface dark:bg-[#0F0F0F] text-on-surface dark:text-[#EDEDED] font-body selection:bg-primary-fixed selection:text-on-primary-fixed transition-colors duration-300 antialiased">
+      <body className="bg-surface dark:bg-[#0F0F0F] text-on-surface dark:text-[#EDEDED] font-body selection:bg-primary-fixed selection:text-on-primary-fixed transition-colors duration-300 antialiased" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <CursorGlow />
           {children}
