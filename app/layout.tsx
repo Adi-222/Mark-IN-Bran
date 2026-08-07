@@ -12,6 +12,9 @@ const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' });
 export const metadata: Metadata = {
   title: 'Mark In Bran — Building Brands People Remember',
   description: 'Mark In Bran is an AI-powered brand growth company that helps founders, startups, creators, and businesses build memorable brands through branding, content, AI, marketing, technology, and digital experiences.',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
